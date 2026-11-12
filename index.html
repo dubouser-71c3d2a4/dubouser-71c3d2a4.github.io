@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宁依纯 - 智能温控服饰品牌</title>
+<meta name="description" content="宁依纯是智能温控服饰品牌，提供发热围巾、温控马甲、自发热袜等产品线，涵盖石墨烯发热、碳纤维加热与智能控温技术解析，适合注重冬季保暖与户外通勤穿搭的用户参考。">
+<meta name="keywords" content="宁依纯">
+<style>
+  :root {
+    --primary: #1e3a5f;
+    --primary-light: #2d5a8a;
+    --primary-dark: #0f2238;
+    --accent: #c9704b;
+    --accent-light: #e8a88c;
+    --bg: #f7f5f2;
+    --bg-card: #ffffff;
+    --bg-alt: #efece7;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --text-tertiary: #8a8a8a;
+    --border: #e0dbd4;
+    --radius-card: 12px;
+    --radius-btn: 8px;
+    --radius-tag: 4px;
+    --shadow-default: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --header-height: 56px;
+    --announce-height: 36px;
+    --sticky-total: 92px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-total); }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  a { color: var(--primary-light); text-decoration: none; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  img { display: block; max-width: 100%; height: auto; }
+
+  /* ========== 吸顶公告条 ========== */
+  .announce-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--primary-dark);
+    color: #e8ddd0;
+    font-size: 13px;
+    padding: 0 16px;
+    height: var(--announce-height);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .announce-bar .brand-mark {
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-right: 14px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .announce-scroll {
+    display: flex;
+    gap: 32px;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+  }
+  .announce-scroll:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .announce-item { display: inline-flex; align-items: center; gap: 6px; }
+  .announce-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .announce-item time { color: var(--accent-light); font-variant-numeric: tabular-nums; }
+
+  /* ========== 吸顶页头 ========== */
+  .site-header {
+    position: sticky;
+    top: var(--announce-height);
+    z-index: 99;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .logo-svg { width: 36px; height: 36px; }
+  .logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 2px;
+  }
+  .header-nav {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .header-nav::-webkit-scrollbar { display: none; }
+  .header-nav a {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-radius: var(--radius-btn);
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+  .header-nav a:hover, .header-nav a.active {
+    background: var(--bg-alt);
+    color: var(--primary);
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-alt);
+    border-radius: 20px;
+    padding: 0 12px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+  .search-box input {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    width: 110px;
+    outline: none;
+    color: var(--text-primary);
+    font-family: inherit;
+  }
+  .search-box input::placeholder { color: var(--text-tertiary); }
+  .search-box button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    font-size: 15px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .search-box button:hover { color: var(--primary); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* ========== 移动端导航 ========== */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: calc(var(--announce-height) + var(--header-height));
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 98;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mobile-nav.open { opacity: 1; pointer-events: auto; }
+  .mobile-nav-inner {
+    background: #fff;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 16px 20px;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-10px);
+    transition: transform 0.3s;
+  }
+  .mobile-nav.open .mobile-nav-inner { transform: translateY(0); }
+  .mobile-nav-inner a {
+    display: block;
+    padding: 12px 8px;
+    font-size: 15px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-nav-inner a:last-child { border-bottom: none; }
+
+  /* ========== 首屏 ========== */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 45%, #1a2f4a 100%);
+    color: #fff;
+    overflow: hidden;
+    padding: 60px 20px 70px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,112,75,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -40px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,140,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-text h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .hero-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+    max-width: 540px;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: var(--radius-btn);
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #b85e3c; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,112,75,0.35); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: var(--radius-btn);
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); color: #fff; }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-visual svg {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.2));
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stat .num {
+    font-size: 26px;
+    font-weight: 800;
+    color: #e8a88c;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+  .hero-stat .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+  }
+
+  /* ========== 主体布局 ========== */
+  .main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 240px;
+    gap: 28px;
+    padding: 32px 0;
+    align-items: start;
+  }
+
+  /* ========== 左侧频道栏 ========== */
+  .channel-sidebar {
+    position: sticky;
+    top: var(--sticky-total);
+    align-self: start;
+  }
+  .channel-sidebar h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .channel-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .channel-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    color: var(--text-secondary);
+    transition: background 0.2s, color 0.2s;
+  }
+  .channel-list a:hover, .channel-list a.active {
+    background: var(--bg-alt);
+    color: var(--primary);
+    font-weight: 500;
+  }
+  .channel-list .ch-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .channel-list a:hover .ch-dot, .channel-list a.active .ch-dot { background: var(--accent); }
+
+  /* ========== 主内容区 ========== */
+  .main-content { min-width: 0; }
+
+  .section {
+    margin-bottom: 44px;
+    scroll-margin-top: var(--sticky-total);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .section-header h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+  .section-header .more-link {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .section-header .more-link:hover { color: var(--accent); }
+
+  /* 概览 */
+  .overview-text {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: 28px 32px;
+    box-shadow: var(--shadow-default);
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+  }
+  .overview-text p { margin-bottom: 12px; }
+  .overview-text p:last-child { margin-bottom: 0; }
+  .overview-text strong { color: var(--text-primary); }
+
+  /* 精选卡片 */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-default);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: var(--bg-alt);
+  }
+  .card-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-type {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: var(--radius-tag);
+    background: #eef3f8;
+    color: var(--primary-light);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    gap: 8px;
+  }
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .card-tags span {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: var(--radius-tag);
+    background: var(--bg-alt);
+    color: var(--text-secondary);
+  }
+  .card-heat { color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+  /* 最新更新列表 */
+  .update-list { list-style: none; }
+  .update-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    margin-bottom: 8px;
+    box-shadow: var(--shadow-default);
+    transition: box-shadow 0.2s;
+    align-items: flex-start;
+  }
+  .update-item:hover { box-shadow: var(--shadow-hover); }
+  .update-date {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+    min-width: 70px;
+  }
+  .update-content { flex: 1; min-width: 0; }
+  .update-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+  .update-summary {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* 分类入口 */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px 10px;
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-default);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .cat-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); color: var(--accent); }
+  .cat-icon { font-size: 22px; line-height: 1; }
+  .cat-count { font-size: 11px; color: var(--text-tertiary); font-weight: 400; }
+
+  /* 深度解析 */
+  .deep-dive {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: 32px 36px;
+    box-shadow: var(--shadow-default);
+  }
+  .deep-dive h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 28px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .deep-dive h3:first-child { margin-top: 0; }
+  .deep-dive p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .deep-dive ul {
+    margin: 12px 0 16px 20px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  .deep-dive li { margin-bottom: 6px; }
+  .deep-dive strong { color: var(--text-primary); }
+  .compare-box {
+    background: var(--bg-alt);
+    border-radius: var(--radius-btn);
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+  .compare-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .compare-box th, .compare-box td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-box th { color: var(--primary); font-weight: 600; }
+
+  /* 体验指南 */
+  .guide-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    counter-reset: guide;
+  }
+  .guide-step {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    counter-increment: guide;
+    align-items: flex-start;
+  }
+  .guide-step:last-child { border-bottom: none; }
+  .guide-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+  }
+  .guide-body h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .guide-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 8px; }
+  .faq-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-default);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 20px;
+    color: var(--text-tertiary);
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: var(--bg-alt); }
+  .faq-answer {
+    padding: 0 20px 18px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  /* 评论 */
+  .comment-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .comment-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: 14px 16px;
+    box-shadow: var(--shadow-default);
+  }
+  .comment-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .comment-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .comment-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .comment-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .comment-text .highlight { color: var(--accent); font-weight: 500; }
+
+  /* 相关资讯 */
+  .news-list { display: flex; flex-direction: column; gap: 0; }
+  .news-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-date {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+    min-width: 72px;
+  }
+  .news-body { flex: 1; }
+  .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+  .news-title a { color: var(--text-primary); }
+  .news-title a:hover { color: var(--accent); }
+  .news-summary {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* 相关推荐 */
+  .rec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .rec-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    box-shadow: var(--shadow-default);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    border: 1px solid var(--border);
+  }
+  .rec-tag:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-1px);
+  }
+
+  /* 补充板块 - 时间线 */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    list-style: none;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    padding-bottom: 22px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .timeline-date {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .timeline-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+  .timeline-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ========== 右侧辅助栏 ========== */
+  .aux-sidebar {
+    position: sticky;
+    top: var(--sticky-total);
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .aux-block {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: 20px;
+    box-shadow: var(--shadow-default);
+  }
+  .aux-block h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.5px;
+  }
+  .rank-list { list-style: none; counter-reset: rank; }
+  .rank-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 13px;
+    counter-increment: rank;
+  }
+  .rank-list li:last-child { border-bottom: none; }
+  .rank-list li::before {
+    content: counter(rank);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--bg-alt);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .rank-list li:nth-child(1)::before { background: var(--accent); color: #fff; }
+  .rank-list li:nth-child(2)::before { background: var(--primary-light); color: #fff; }
+  .rank-list li:nth-child(3)::before { background: var(--primary); color: #fff; }
+  .rank-list a { color: var(--text-secondary); flex: 1; }
+  .rank-list a:hover { color: var(--accent); }
+  .rank-heat { font-size: 11px; color: var(--text-tertiary); }
+
+  .update-feed { list-style: none; }
+  .update-feed li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .update-feed li:last-child { border-bottom: none; }
+  .update-feed .feed-date { color: var(--text-tertiary); font-size: 11px; display: block; margin-top: 2px; }
+  .update-feed a { color: var(--text-secondary); }
+  .update-feed a:hover { color: var(--accent); }
+
+  .submit-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff;
+    border-radius: var(--radius-card);
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .submit-box h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+    border: none;
+    padding: 0;
+  }
+  .submit-box p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .submit-box .btn-submit {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: var(--radius-btn);
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .submit-box .btn-submit:hover { background: #b85e3c; color: #fff; }
+
+  /* ========== 页尾 ========== */
+  .site-footer {
+    background: var(--primary-dark);
+    color: rgba(255,255,255,0.65);
+    padding: 48px 20px 28px;
+    margin-top: 40px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 36px;
+  }
+  .footer-brand h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.55);
+    max-width: 320px;
+  }
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--accent-light); }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 32px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* 回到顶部 */
+  .back-top {
+    position: fixed;
+    right: 24px;
+    bottom: 32px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: var(--shadow-hover);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 90;
+  }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { transform: translateY(-3px); background: var(--primary-light); }
+
+  /* 搜索无结果提示 */
+  .search-empty {
+    display: none;
+    padding: 32px;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+  }
+  .search-empty.show { display: block; }
+
+  /* ========== 响应式 ========== */
+  @media (max-width: 1100px) {
+    .layout-grid { grid-template-columns: 1fr 240px; }
+    .channel-sidebar { display: none; }
+    .hero-inner { grid-template-columns: 1fr 260px; gap: 36px; }
+    .hero-text h1 { font-size: 36px; }
+  }
+
+  @media (max-width: 900px) {
+    .layout-grid { grid-template-columns: 1fr; }
+    .aux-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .aux-sidebar .aux-block:nth-child(3) { grid-column: 1 / -1; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .hero-inner { grid-template-columns: 1fr; text-align: left; }
+    .hero-visual { display: none; }
+    .card-grid { grid-template-columns: 1fr; }
+    .comment-list { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 740px) {
+    .header-nav { display: none; }
+    .search-box { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav { display: block; }
+    .hero { padding: 40px 20px 50px; }
+    .hero-text h1 { font-size: 30px; }
+    .hero-text p { font-size: 15px; }
+    .hero-stats { gap: 20px; }
+    .hero-stat .num { font-size: 22px; }
+    .main-container { padding: 0 16px; }
+    .layout-grid { padding: 20px 0; gap: 20px; }
+    .aux-sidebar { grid-template-columns: 1fr; }
+    .overview-text { padding: 20px; }
+    .deep-dive { padding: 20px; }
+    .section-header h2 { font-size: 18px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .back-top { right: 16px; bottom: 20px; width: 38px; height: 38px; }
+    .announce-scroll { animation-duration: 20s; }
+  }
+
+  @media (max-width: 400px) {
+    .cat-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cat-item { padding: 14px 8px; font-size: 13px; }
+    .hero-text h1 { font-size: 26px; }
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar" role="region" aria-label="更新公告">
+  <span class="brand-mark">宁依纯</span>
+  <div class="announce-scroll">
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-08">11月8日</time> 温控围巾 Pro 2 代石墨烯发热膜片升级至 12 区</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-06">11月6日</time> 自发热袜礼盒装补货 3200 件</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-04">11月4日</time> 冬季温控服饰选购指南更新 6 条</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-01">11月1日</time> 碳纤维加热马甲新增雾灰色</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-10-28">10月28日</time> 用户众测第 3 期招募 200 人</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-08">11月8日</time> 温控围巾 Pro 2 代石墨烯发热膜片升级至 12 区</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-06">11月6日</time> 自发热袜礼盒装补货 3200 件</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-04">11月4日</time> 冬季温控服饰选购指南更新 6 条</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-11-01">11月1日</time> 碳纤维加热马甲新增雾灰色</span>
+    <span class="announce-item"><span class="dot"></span><time datetime="2026-10-28">10月28日</time> 用户众测第 3 期招募 200 人</span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="2" y="2" width="36" height="36" rx="10" fill="#1e3a5f"/>
+      <path d="M12 14 L20 10 L28 14 L28 26 L20 30 L12 26 Z" stroke="#e8a88c" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+      <path d="M20 10 L20 30" stroke="#e8a88c" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="20" cy="20" r="2.5" fill="#c9704b"/>
+    </svg>
+    <span class="logo-text">宁依纯</span>
+  </div>
+  <nav class="header-nav" aria-label="主导航">
+    <a href="#overview">品牌概览</a>
+    <a href="#featured">精选系列</a>
+    <a href="#updates">最新动态</a>
+    <a href="#categories">产品分类</a>
+    <a href="#deep-dive">技术解析</a>
+    <a href="#guide">选购指南</a>
+    <a href="#faq">常见问题</a>
+    <a href="#comments">用户评价</a>
+    <a href="#news">品牌资讯</a>
+  </nav>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜索产品/技术" aria-label="搜索站内内容">
+    <button type="button" id="searchBtn" aria-label="搜索">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    </button>
+  </div>
+  <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- 移动端导航 -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <a href="#overview">品牌概览</a>
+    <a href="#featured">精选系列</a>
+    <a href="#updates">最新动态</a>
+    <a href="#categories">产品分类</a>
+    <a href="#deep-dive">技术解析</a>
+    <a href="#guide">选购指南</a>
+    <a href="#faq">常见问题</a>
+    <a href="#comments">用户评价</a>
+    <a href="#news">品牌资讯</a>
+    <a href="#timeline">产品时间线</a>
+  </div>
+</div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>宁依纯</h1>
+      <p>聚焦智能温控服饰的保暖方案：石墨烯发热围巾、碳纤维加热马甲、自发热袜与温控配件，从发热膜片分布到控温逻辑，整理每一款产品的实际表现与适用场景。</p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn-primary">查看精选系列</a>
+        <a href="#guide" class="btn-outline">选购指南</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">4</div>
+          <div class="label">产品线</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">12</div>
+          <div class="label">发热区域</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">3</div>
+          <div class="label">温控档位</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="40" y="20" width="200" height="260" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+        <path d="M90 60 Q140 40 190 60 Q200 120 190 180 Q140 200 90 180 Q80 120 90 60 Z" fill="rgba(201,112,75,0.15)" stroke="#e8a88c" stroke-width="1.5"/>
+        <path d="M110 90 L140 80 L170 90 L170 150 L140 160 L110 150 Z" stroke="#e8a88c" stroke-width="1.2" fill="none" stroke-linejoin="round" opacity="0.7"/>
+        <circle cx="140" cy="120" r="8" fill="none" stroke="#c9704b" stroke-width="2"/>
+        <circle cx="140" cy="120" r="3" fill="#c9704b"/>
+        <path d="M120 200 L160 200" stroke="rgba(232,168,140,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M128 215 L152 215" stroke="rgba(232,168,140,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M136 230 L144 230" stroke="rgba(232,168,140,0.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="60" y="250" width="60" height="16" rx="8" fill="rgba(201,112,75,0.2)"/>
+        <rect x="130" y="250" width="40" height="16" rx="8" fill="rgba(232,168,140,0.15)"/>
+        <rect x="180" y="250" width="50" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主体布局 -->
+<div class="main-container">
+  <div class="layout-grid">
+
+    <!-- 左侧频道栏 -->
+    <aside class="channel-sidebar" aria-label="频道导航">
+      <h3>频道</h3>
+      <ul class="channel-list">
+        <li><a href="#overview" class="active"><span class="ch-dot"></span>品牌概览</a></li>
+        <li><a href="#featured"><span class="ch-dot"></span>精选系列</a></li>
+        <li><a href="#updates"><span class="ch-dot"></span>最新动态</a></li>
+        <li><a href="#categories"><span class="ch-dot"></span>产品分类</a></li>
+        <li><a href="#deep-dive"><span class="ch-dot"></span>技术解析</a></li>
+        <li><a href="#guide"><span class="ch-dot"></span>选购指南</a></li>
+        <li><a href="#faq"><span class="ch-dot"></span>常见问题</a></li>
+        <li><a href="#comments"><span class="ch-dot"></span>用户评价</a></li>
+        <li><a href="#news"><span class="ch-dot"></span>品牌资讯</a></li>
+        <li><a href="#related"><span class="ch-dot"></span>相关推荐</a></li>
+        <li><a href="#timeline"><span class="ch-dot"></span>产品时间线</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-content" id="mainContent">
+
+      <!-- 板块1：品牌概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2>品牌概览</h2>
+        </div>
+        <div class="overview-text">
+          <p><strong>宁依纯</strong>的产品线围绕冬季与户外场景的温控保暖展开。目前在售的四条主线分别是：温控围巾（覆盖颈部与上胸）、加热马甲（躯干核心保暖）、自发热袜（足部末梢循环）以及温控配件（护膝、护腰、手套），每条线各有 2—4 个型号，价格带从 89 元的自发热袜到 699 元的碳纤维加热马甲。</p>
+          <p>从技术路线来看，产品分两类：<strong>石墨烯远红外发热</strong>和<strong>碳纤维电阻加热</strong>。石墨烯方案升温快、面状发热均匀，适合围巾和护颈类近距离贴肤产品；碳纤维方案功率更高、耐弯折性好，用在大面积马甲和护腰上。两个路线的控温逻辑也不同——石墨烯靠膜片自身电阻随温度变化的特性做被动调节，碳纤维则依赖外置 NTC 热敏电阻加 MCU 主动控温。</p>
+          <p>2026 年秋冬系列的关键变化集中在三点：温控围巾 Pro 2 代的发热区从 8 区扩到 12 区；加热马甲新增雾灰色并下调了 30 克重量；自发热袜礼盒装改为 3 双装规格。用户众测第 3 期已在 10 月 28 日启动，招募 200 人，覆盖通勤、滑雪和户外作业三类场景。</p>
+        </div>
+      </section>
+
+      <!-- 板块2：精选系列 -->
+      <section class="section" id="featured">
+        <div class="section-header">
+          <h2>精选产品系列</h2>
+          <a href="#categories" class="more-link">全部产品 →</a>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ningyichun-scarf-pro2/400/300" alt="温控围巾 Pro 2 代石墨烯发热膜片细节" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">温控围巾</span>
+              <div class="card-title">温控围巾 Pro 2 代</div>
+              <div class="card-desc">石墨烯发热膜片从 8 区升级为 12 区，覆盖颈后至锁骨区域。三档控温 38/45/52℃，内置 5000mAh 电池，低档续航约 8 小时。面料改为双层摇粒绒复合。</div>
+              <div class="card-meta">
+                <div class="card-tags"><span>石墨烯</span><span>12区发热</span></div>
+                <span class="card-heat">新品</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ningyichun-vest-carbon/400/300" alt="碳纤维加热马甲雾灰色外观" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">加热马甲</span>
+              <div class="card-title">碳纤维加热马甲</div>
+              <div class="card-desc">碳纤维发热丝分布在背部与腹部共 5 个区域，最大功率 22W。新增雾灰色，整衣重量 380 克。配 10000mAh 移动电源，高档续航约 3.5 小时。</div>
+              <div class="card-meta">
+                <div class="card-tags"><span>碳纤维</span><span>5区加热</span></div>
+                <span class="card-heat">热销</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ningyichun-socks-gift/400/300" alt="自发热袜礼盒装三双装" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">自发热袜</span>
+              <div class="card-title">自发热袜礼盒装</div>
+              <div class="card-desc">三双装（黑/灰/驼），采用吸湿发热纤维混纺，不需要充电。脚底加厚毛圈结构，踝部收口加宽避免勒痕。11 月 6 日补货 3200 件。</div>
+              <div class="card-meta">
+                <div class="card-tags"><span>吸湿发热</span><span>三双装</span></div>
+                <span class="card-heat">补货中</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ningyichun-knee-pad/400/300" alt="温控护膝可拆卸电池仓" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">温控配件</span>
+              <div class="card-title">温控护膝</div>
+              <div class="card-desc">石墨烯膜片覆盖膝盖正面与两侧，电池仓可拆卸单独充电。弯曲自适应剪裁，适合骑行与滑雪场景。单次充电中档可用约 5 小时。</div>
+              <div class="card-meta">
+                <div class="card-tags"><span>石墨烯</span><span>可拆电池</span></div>
+                <span class="card-heat">评分 4.6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块3：最新动态 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2>最新动态</h2>
+        </div>
+        <ul class="update-list">
+          <li class="update-item">
+            <span class="update-date">11月8日</span>
+            <div class="update-content">
+              <div class="update-title">温控围巾 Pro 2 代发热膜片升级至 12 区</div>
+              <div class="update-summary">新增颈后下方两块膜片，官方数据显示颈部平均升温速度提升约 40 秒，低温档实测续航从 7.2 小时延长到 8 小时左右。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">11月6日</span>
+            <div class="update-content">
+              <div class="update-title">自发热袜礼盒装补货 3200 件</div>
+              <div class="update-summary">黑/灰/驼三色组合装恢复库存，天猫旗舰店与京东自营同步上架。上一轮 10 月 20 日补货在 4 天内售罄。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">11月4日</span>
+            <div class="update-content">
+              <div class="update-title">冬季温控服饰选购指南更新 6 条</div>
+              <div class="update-summary">新增“石墨烯与碳纤维如何选”“电池续航虚标怎么看”“围巾贴肤层材质对比”三个章节，均在选购指南中可见。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">11月1日</span>
+            <div class="update-content">
+              <div class="update-title">碳纤维加热马甲新增雾灰色</div>
+              <div class="update-summary">雾灰色版本与黑色同价 699 元，面料克重从 280g 降到 250g，整衣轻了 30 克。S—XXL 五个尺码同步开售。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">10月28日</span>
+            <div class="update-content">
+              <div class="update-title">用户众测第 3 期招募 200 人</div>
+              <div class="update-summary">面向通勤、滑雪、户外作业三类人群，报名需提交使用场景说明。入选者获得温控围巾 Pro 2 代一台，两周内提交体验报告。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">10月22日</span>
+            <div class="update-content">
+              <div class="update-title">温控护膝新增 XL 尺码</div>
+              <div class="update-summary">针对腿围 55cm 以上用户增加 XL 码，绑带长度从 42cm 调整到 48cm。此前评论区有 17 条反馈绑带偏短的问题。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">10月18日</span>
+            <div class="update-content">
+              <div class="update-title">石墨烯发热膜片通过 5000 次弯折测试</div>
+              <div class="update-summary">第三方检测机构报告显示，膜片在 5000 次弯折后电阻变化率低于 3%，高于行业常用的 3000 次标准。</div>
+            </div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">10月12日</span>
+            <div class="update-content">
+              <div class="update-title">温控配件线增加护腰型号</div>
+              <div class="update-summary">碳纤维护腰定价 349 元，覆盖腰椎两侧，适合久坐与户外低温场景。首批 800 件已于 10 月 15 日发出。</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 板块4：分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2>产品分类</h2>
+        </div>
+        <div class="cat-grid">
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🧣</span>
+            温控围巾
+            <span class="cat-count">2 款</span>
+          </a>
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🧥</span>
+            加热马甲
+            <span class="cat-count">2 款</span>
+          </a>
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🧦</span>
+            自发热袜
+            <span class="cat-count">3 款</span>
+          </a>
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🦵</span>
+            温控护膝
+            <span class="cat-count">2 款</span>
+          </a>
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🔋</span>
+            移动电源
+            <span class="cat-count">3 款</span>
+          </a>
+          <a href="#featured" class="cat-item">
+            <span class="cat-icon">🧤</span>
+            温控手套
+            <span class="cat-count">1 款</span>
+          </a>
+          <a href="#deep-dive" class="cat-item">
+            <span class="cat-icon">⚡</span>
+            石墨烯系列
+            <span class="cat-count">5 款</span>
+          </a>
+          <a href="#deep-dive" class="cat-item">
+            <span class="cat-icon">🔥</span>
+            碳纤维系列
+            <span class="cat-count">4 款</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 板块5：技术解析（深度解析） -->
+      <section class="section" id="deep-dive">
+        <div class="section-header">
+          <h2>温控技术深度解析</h2>
+        </div>
+        <div class="deep-dive">
+          <h3>石墨烯发热与碳纤维加热的实质差异</h3>
+          <p>两种方案的核心区别在于<strong>发热体的电阻特性</strong>。石墨烯发热膜片属于面状发热体，通电后整片区域同时升温，温度分布相对均匀，温差在 ±2℃ 以内。碳纤维发热丝是线状发热体，热量从丝线向周围扩散，靠近发热丝的位置温度高，越远越低，单区温差可能达到 ±3—4℃。这个差异直接影响了产品设计——围巾贴肤、面积小，用石墨烯更合适；马甲面积大、需要更高功率，碳纤维的耐弯折性和功率上限更有优势。</p>
+          <p>另一个容易被忽略的点是<strong>控温方式</strong>。石墨烯膜片本身有正温度系数效应（PTC），温度升高时电阻增大、功率自动下降，属于被动安全机制。碳纤维丝没有这个特性，必须靠 NTC 热敏电阻实时采样、MCU 调节 PWM 占空比来控温。这意味着碳纤维方案的电路复杂度更高，一旦温控芯片失效，发热丝可能持续满功率工作。宁依纯在碳纤维马甲上做了双重保护：主控芯片之外，加了一颗独立的硬件过温保护开关，超过 65℃ 直接断电。</p>
+
+          <h3>发热区域数量与实际体感的关系</h3>
+          <p>Pro 2 代围巾从 8 区扩到 12 区，多出来的 4 块膜片集中在颈后下方和两侧锁骨位置。官方测试数据显示，在 5℃ 环境、静坐状态下，颈部皮肤表面平均温度从 34.2℃ 提升到 36.8℃，达到舒适温度的时间从 4 分 20 秒缩短到 3 分 40 秒。不过“区域数量”不完全等于“体感提升”——12 区中实际发热功率密度较高的只有 8 块，另外 4 块属于辅助补偿区。选购时看总功率和电池容量更实在，Pro 2 代总功率 9W、电池 5000mAh，比一代的 7W/4000mAh 有实际提升。</p>
+
+          <div class="compare-box">
+            <p><strong>两代围巾关键参数对比（官方标称）</strong></p>
+            <table>
+              <tr><th>项目</th><th>Pro 2 代</th><th>Pro 1 代</th></tr>
+              <tr><td>发热区域</td><td>12 区</td><td>8 区</td></tr>
+              <tr><td>总功率</td><td>9W</td><td>7W</td></tr>
+              <tr><td>电池容量</td><td>5000mAh</td><td>4000mAh</td></tr>
+              <tr><td>低档续航</td><td>约 8 小时</td><td>约 7.2 小时</td></tr>
+              <tr><td>面料结构</td><td>双层摇粒绒复合</td><td>单层抓绒</td></tr>
+              <tr><td>整重</td><td>185g</td><td>172g</td></tr>
+            </table>
+          </div>
+
+          <h3>电池续航标注的核查方法</h3>
+          <p>续航数据在不同温度档位下差异很大。低档 38℃ 和高温档 52℃ 的功耗可以相差 2—3 倍。查看续航时，先确认标称续航对应的是哪个档位、什么环境温度。宁依纯 Pro 2 代标称的 8 小时对应低档 38℃、环境温度 5℃ 的测试条件；高温档 52℃ 下，同款电池的续航约为 3.2 小时。行业里部分品牌标的是 25℃ 室温下的续航，数字好看但不反映冬季实际使用。一个可操作的判断方法：用电池容量（Wh）除以标称功率（W），得到理论续航上限，再乘以 0.75—0.85 的转换效率。Pro 2 代的电池为 18.5Wh（3.7V×5000mAh），低档功率约 2.5W，理论续航 7.4 小时，与标称 8 小时基本吻合。</p>
+
+          <h3>面料与贴肤层的取舍</h3>
+          <p>Pro 2 代改用双层摇粒绒复合后，整重增加了 13 克，但内层绒毛密度提高后，贴肤舒适度明显改善。一代的单层抓绒在干燥环境下容易起静电，用户反馈集中在这一项。碳纤维马甲的外层用防泼水尼龙、内层用网眼布，中间夹发热丝——这种结构的好处是散热均匀，缺点是网眼布直接接触皮肤时，如果发热丝区域温度偏高，体感会有些燥。雾灰色版本把内层网眼布换成了更细的涤纶网纱，透气性略有提升。</p>
+        </div>
+      </section>
+
+      <!-- 板块6：选购指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2>温控服饰选购路径</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="guide-num">1</div>
+            <div class="guide-body">
+              <h4>先确定使用场景，再看发热区域</h4>
+              <p>通勤场景（步行 20—40 分钟、室内外温差大）优先看围巾和护膝，发热区域不需要太多，但续航要够。滑雪或户外作业需要马甲级别的躯干保暖，重点看碳纤维方案的总功率和过温保护配置。场景决定品类，品类决定技术路线。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">2</div>
+            <div class="guide-body">
+              <h4>对比功率与电池容量，而不是看“几区发热”</h4>
+              <p>发热区域数量是营销参数，总功率（W）和电池容量（mAh 或 Wh）才是硬指标。同样标 5 区发热，总功率 15W 和 22W 的实际升温速度差别很大。把两个数字放在一起看：功率高、电池小的产品续航短；功率低、电池大的产品升温慢。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">3</div>
+            <div class="guide-body">
+              <h4>确认控温方式与安全保护是否完整</h4>
+              <p>石墨烯产品天然有 PTC 被动保护，碳纤维产品必须确认是否有 NTC 主动控温。问清楚过温保护的温度阈值（65℃ 是常见安全线）、是否有独立硬件保护、电池是否带过充保护。这些信息在产品详情页不一定写全，可以向客服确认。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">4</div>
+            <div class="guide-body">
+              <h4>贴肤层材质决定实际穿着意愿</h4>
+              <p>温控服饰的发热性能再好，如果贴肤层扎、起静电或闷汗，使用频率会大幅下降。摇粒绒复合面料在干燥环境下的静电控制优于单层抓绒；网眼内衬透气好但直接接触皮肤可能有燥感。优先选择有内衬隔离层的设计。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">5</div>
+            <div class="guide-body">
+              <h4>用“每瓦续航”做横向比较</h4>
+              <p>把电池容量换算成 Wh，除以低档功率，得到理论续航小时数。再对比不同型号的实测续航与理论值之间的偏差比例。偏差在 15% 以内算标注实在，偏差超过 30% 需要警惕。Pro 2 代的理论值 7.4 小时与标称 8 小时偏差约 8%，属于标注较为保守的一类。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块7：FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>石墨烯发热围巾和普通发热围巾有什么区别？</summary>
+            <div class="faq-answer">石墨烯发热膜片是面状发热，整片区域同时升温、温差小，贴肤舒适度更好。普通发热围巾多用碳纤维丝或金属丝，热量沿丝线分布，靠近丝线的位置明显更热。从升到舒适温度的速度看，石墨烯方案在 5℃ 环境下约 3—4 分钟，碳纤维丝方案约 5—6 分钟。另一个差异在安全性：石墨烯膜片有正温度系数效应，温度越高电阻越大、功率自动下降；碳纤维丝需要额外的温控芯片来调节。</div>
+          </details>
+          <details class="faq-item">
+            <summary>碳纤维加热马甲的电池能带上飞机吗？</summary>
+            <div class="faq-answer">马甲配套的 10000mAh 移动电源，额定能量约 37Wh（3.7V×10000mAh），低于民航规定的 100Wh 随身携带上限，可以带上飞机，但必须随身携带、不能托运。如果选配的是 20000mAh 版本，能量约 74Wh，同样在 100Wh 以内。超过 160Wh 的充电宝禁止携带。值机安检时建议单独取出放在托盘里，和电子设备一起过检。</div>
+          </details>
+          <details class="faq-item">
+            <summary>自发热袜不充电为什么能发热？</summary>
+            <div class="faq-answer">自发热袜的发热原理是吸湿发热纤维，利用人体皮肤蒸发的水分与纤维中的亲水基团结合，释放热量。这种发热不需要外部电源，但发热量有限，通常能让足部体感温度提升 2—3℃，不是持续主动加热。实际效果取决于袜子贴肤程度和活动量，静坐不动时体感差异会小一些。洗涤 30 次后纤维的吸湿发热性能会有一定衰减，这是材料本身的特性。</div>
+          </details>
+          <details class="faq-item">
+            <summary>温控围巾的 12 区发热和 8 区发热差别大吗？</summary>
+            <div class="faq-answer">Pro 2 代的 12 区中，实际功率密度较高的是 8 块，另外 4 块分布在颈后下方和锁骨两侧，属于辅助补偿区。官方测试显示颈部平均温度从 34.2℃ 提升到 36.8℃，达到舒适温度的时间缩短了约 40 秒。体感上的差异主要在颈后下方那一块，原来 8 区版本这个位置是空白，冷风从领口灌入时会有明显温差。如果平常穿高领内搭，这个差异不太明显；如果穿低领毛衣，Pro 2 代的覆盖优势就体现出来了。</div>
+          </details>
+          <details class="faq-item">
+            <summary>加热服饰可以用洗衣机洗吗？</summary>
+            <div class="faq-answer">需要看具体产品的防水等级和电池仓结构。温控围巾 Pro 2 代和碳纤维马甲都要求先取出电池，再将发热组件拉链封口，放入洗衣袋后选择轻柔模式、水温不超过 30℃。不能烘干、不能拧干、不能熨烫。护膝和护腰的电池仓是分离式设计，取出后可以正常手洗。自发热袜不含电子元件，常规机洗即可，但建议翻面洗以保护内侧纤维。石墨烯膜片虽然通过了 5000 次弯折测试，机洗时的拉扯力仍可能影响膜片与导线的焊接点，手洗更稳妥。</div>
+          </details>
+          <details class="faq-item">
+            <summary>温控护膝的 XL 码和标准码差多少？</summary>
+            <div class="faq-answer">XL 码的绑带长度从标准码的 42cm 调整到 48cm，适合腿围 55cm 以上的用户。发热区域和电池配置跟标准码一致，总功率 7W，中档续航约 5 小时。此前标准码绑带偏短的问题在评论区有 17 条反馈，集中在腿围 52—55cm 的用户群体。如果腿围在 50cm 以下，标准码的贴合度更好，XL 码多余的绑带需要额外收纳。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 板块8：用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2>用户评价</h2>
+        </div>
+        <div class="comment-list">
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">林</div>
+              <span class="comment-name">林间有风</span>
+            </div>
+            <div class="comment-text">Pro 2 代围巾颈后那块补上的膜片确实是刚需，之前一代穿低领毛衣总觉得后脖子凉飕飕的。续航也比一代实在，早上七点出门开低档，下午四点还有电。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">陈</div>
+              <span class="comment-name">陈小满</span>
+            </div>
+            <div class="comment-text">马甲雾灰色比黑色好看太多了，但内层网眼布贴身穿还是有点燥，得套一件薄打底。发热速度倒是快，开机大概两分钟就有感觉。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">张</div>
+              <span class="comment-name">张工不加班</span>
+            </div>
+            <div class="comment-text">护膝 XL 码终于出了，之前 42cm 绑带绑在小腿上勉强够，走两步就松。48cm 这个长度对我 56cm 腿围刚好，就是发热区覆盖稍微偏上了一点。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">王</div>
+              <span class="comment-name">王二狗子</span>
+            </div>
+            <div class="comment-text">自发热袜买了三双装，穿了两周，脚底确实暖和一些，但没有宣传的那么神。零下五度户外站半小时，该冷还是冷，当普通厚袜子穿还行。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">赵</div>
+              <span class="comment-name">赵四小姐</span>
+            </div>
+            <div class="comment-text">问客服碳纤维马甲的过温保护温度是多少，客服说 65℃，还发了检测报告截图。这个态度可以，比那些只会说“绝对安全”的强。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">周</div>
+              <span class="comment-name">周游世界</span>
+            </div>
+            <div class="comment-text">滑雪戴护膝，中档五个小时确实够用，但电池仓那个位置在弯腿的时候有点硌。不知道是不是我腿型的问题。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">吴</div>
+              <span class="comment-name">吴所事事</span>
+            </div>
+            <div class="comment-text">温控围巾洗了三次，目前没出问题。严格按照说明取出电池、拉链封口、放洗衣袋，就是晾干得比較久，摇粒绒吸水。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">郑</div>
+              <span class="comment-name">郑在输入</span>
+            </div>
+            <div class="comment-text">对比过另外两个牌子的发热围巾，宁依纯这个 9W 功率不算最高，但电池给到 5000mAh，算下来每瓦续航时长是这几家里最长的。看重续航的可以选这个。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">孙</div>
+              <span class="comment-name">孙悟饭否</span>
+            </div>
+            <div class="comment-text">自发热袜洗了大概二十次，发热感确实不如刚买的时候了。客服说这是吸湿发热纤维的正常衰减，建议三个月换一次。行吧，当消耗品用。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">刘</div>
+              <span class="comment-name">刘浪者</span>
+            </div>
+            <div class="comment-text">马甲 380 克比想象中轻，穿在大衣里面不臃肿。但是 22W 全开的时候，电池发热也挺明显的，放口袋里感觉那块是温的。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">黄</div>
+              <span class="comment-name">黄小厨</span>
+            </div>
+            <div class="comment-text">一件马甲的价格能买好几条围巾了，看个人需求吧。我主要是骑车通勤，躯干保暖比脖子重要，围巾骑车时还容易被风吹歪。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">马</div>
+              <span class="comment-name">马不停蹄</span>
+            </div>
+            <div class="comment-text">众测第三期报名了，还没出结果。看第二期入选的人发的报告，有人测了连续戴 6 小时皮肤温度变化，数据还挺详细的。希望这次能选上。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">徐</div>
+              <span class="comment-name">徐来清风</span>
+            </div>
+            <div class="comment-text">护腰刚出就买了，腰椎两侧覆盖得可以，但发热区域只有背部有，正面腰腹没有。宣传图看着像前后都有，收到才发现是单面。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">何</div>
+              <span class="comment-name">何必当真</span>
+            </div>
+            <div class="comment-text">去年买的 Pro 1 代，今年看到 Pro 2 代参数有点心动。但 1 代还能用，续航缩水不明显，再观望观望。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">曹</div>
+              <span class="comment-name">曹孟德乐</span>
+            </div>
+            <div class="comment-text">那个双层摇粒绒确实解决了静电问题，一代冬天脱围巾的时候噼里啪啦的，二代好多了。就冲这一点也值。</div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head">
+              <div class="comment-avatar">邓</div>
+              <span class="comment-name">邓等等</span>
+            </div>
+            <div class="comment-text">不清楚为什么围巾要做 12 区，多出来的区域功率密度又不高，不如把总功率提上去。个人看法。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块9：相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2>品牌资讯</h2>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">11月8日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#updates">温控围巾 Pro 2 代正式开售，12 区发热膜片成核心卖点</a></div>
+              <div class="news-summary">首批备货 5000 条，天猫旗舰店前 2 小时售出 1800 条。官方同步发布了膜片弯折测试视频，显示 5000 次弯折后电阻变化率 2.8%。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月5日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#deep-dive">石墨烯发热膜片第三方检测报告公布，弯折寿命高于行业标准</a></div>
+              <div class="news-summary">SGS 通标标准技术服务有限公司出具的报告显示，送检膜片在 5000 次弯折后电阻变化率 2.8%，行业常用测试标准为 3000 次、允许变化率 5% 以内。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">10月30日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#faq">自发热袜礼盒装 10 月补货售罄，下次到货 11 月 6 日</a></div>
+              <div class="news-summary">10 月 20 日补的 2800 件在 4 天内售完，客服端收到超 400 条催货记录。11 月 6 日新一批 3200 件已入库，三色组合装同步上架。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">10月26日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#comments">护膝绑带长度问题收集到 17 条反馈，XL 码 10 月 22 日上线</a></div>
+              <div class="news-summary">用户反馈集中在腿围 52—55cm 区间，原绑带 42cm 在高强度活动时容易松脱。XL 码绑带加长到 48cm，首批 600 件已发完。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">10月20日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#featured">碳纤维加热马甲雾灰色版本曝光，整衣减重 30 克</a></div>
+              <div class="news-summary">面料克重从 280g 调整到 250g，内层网眼布换为涤纶网纱。定价与黑色版一致，699 元，11 月 1 日正式开售。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">10月15日</span>
+            <div class="news-body">
+              <div class="news-title"><a href="#timeline">温控配件线新增护腰型号，首批 800 件已发出</a></div>
+              <div class="news-summary">碳纤维护腰覆盖腰椎两侧，总功率 12W，定价 349 元。首批 800 件在 10 月 15 日通过顺丰发出，用户晒单显示包装内附使用说明卡。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块10：相关推荐 -->
+      <section class="section" id="related">
+        <div class="section-header">
+          <h2>相关推荐</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="#featured" class="rec-tag">石墨烯发热围巾对比</a>
+          <a href="#featured" class="rec-tag">碳纤维马甲选购</a>
+          <a href="#guide" class="rec-tag">自发热袜实测</a>
+          <a href="#deep-dive" class="rec-tag">发热膜片寿命</a>
+          <a href="#faq" class="rec-tag">电池续航计算方法</a>
+          <a href="#comments" class="rec-tag">护膝 XL 码体验</a>
+          <a href="#updates" class="rec-tag">Pro 2 代升级点</a>
+          <a href="#guide" class="rec-tag">贴肤层材质选择</a>
+        </div>
+      </section>
+
+      <!-- 板块11：产品时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-header">
+          <h2>产品时间线</h2>
+        </div>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-date">2026-11-08</div>
+            <div class="timeline-title">温控围巾 Pro 2 代开售</div>
+            <div class="timeline-desc">12 区石墨烯膜片、5000mAh 电池、双层摇粒绒复合面料，定价 429 元。</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2026-11-01</div>
+            <div class="timeline-title">碳纤维加热马甲新增雾灰色</div>
+            <div class="timeline-desc">整衣减重 30 克，内层网眼布换涤纶网纱，定价维持 699 元。</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2026-10-22</div>
+            <div class="timeline-title">温控护膝新增 XL 尺码</div>
+            <div class="timeline-desc">绑带长度 48cm，针对腿围 55cm 以上用户，回应 17 条绑带偏短反馈。</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2026-10-15</div>
+            <div class="timeline-title">碳纤维护腰上市</div>
+            <div class="timeline-desc">温控配件线扩至 4 个品类，护腰总功率 12W，定价 349 元。</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2026-10-08</div>
+            <div class="timeline-title">石墨烯膜片 5000 次弯折测试完成</div>
+            <div class="timeline-desc">第三方检测报告出炉，电阻变化率 2.8%，用于 Pro 2 代产品宣传。</div>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="aux-sidebar" aria-label="辅助信息">
+      <div class="aux-block">
+        <h3>热门产品榜</h3>
+        <ol class="rank-list">
+          <li><a href="#featured">温控围巾 Pro 2 代</a><span class="rank-heat">热度 9.8</span></li>
+          <li><a href="#featured">碳纤维加热马甲</a><span class="rank-heat">热度 9.2</span></li>
+          <li><a href="#featured">自发热袜礼盒装</a><span class="rank-heat">热度 8.7</span></li>
+          <li><a href="#featured">温控护膝</a><span class="rank-heat">热度 7.9</span></li>
+          <li><a href="#featured">碳纤维护腰</a><span class="rank-heat">热度 7.1</span></li>
+        </ol>
+      </div>
+
+      <div class="aux-block">
+        <h3>更新记录</h3>
+        <ul class="update-feed">
+          <li><a href="#updates">Pro 2 代围巾发热区升级至 12 区</a><span class="feed-date">11月8日</span></li>
+          <li><a href="#updates">自发热袜礼盒补货 3200 件</a><span class="feed-date">11月6日</span></li>
+          <li><a href="#updates">选购指南更新 6 条</a><span class="feed-date">11月4日</span></li>
+          <li><a href="#updates">马甲新增雾灰色</a><span class="feed-date">11月1日</span></li>
+          <li><a href="#updates">众测第 3 期招募 200 人</a><span class="feed-date">10月28日</span></li>
+        </ul>
+      </div>
+
+      <div class="aux-block submit-box">
+        <h3>用户众测</h3>
+        <p>第 3 期招募 200 人，面向通勤、滑雪、户外作业场景。入选者获温控围巾 Pro 2 代一台。</p>
+        <a href="#updates" class="btn-submit">了解详情</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>宁依纯</h2>
+      <p>智能温控服饰品牌，产品覆盖围巾、马甲、袜品与护具四大品类。2026 年秋冬系列包含 4 条产品线、11 个在售型号，更新节奏为每月 2—3 次产品迭代与补货通知。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品线</h4>
+      <ul>
+        <li><a href="#featured">温控围巾</a></li>
+        <li><a href="#featured">加热马甲</a></li>
+        <li><a href="#featured">自发热袜</a></li>
+        <li><a href="#featured">温控护膝</a></li>
+        <li><a href="#featured">碳纤维护腰</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <ul>
+        <li><a href="#deep-dive">技术解析</a></li>
+        <li><a href="#guide">选购指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#comments">用户评价</a></li>
+        <li><a href="#news">品牌资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <ul>
+        <li><a href="#updates">用户众测</a></li>
+        <li><a href="#timeline">产品时间线</a></li>
+        <li><a href="#related">相关推荐</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>本页面内容为示例数据展示，产品信息以实际销售页面为准。</span>
+    <span>页面更新时间：2026 年 11 月 8 日 · 对应更新项：温控围巾 Pro 2 代开售</span>
+  </div>
+</footer>
+
+<!-- 回到顶部按钮 -->
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "宁依纯",
+  "description": "智能温控服饰品牌产品信息与选购参考",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "石墨烯发热围巾和普通发热围巾有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "石墨烯发热膜片是面状发热，整片区域同时升温、温差小，贴肤舒适度更好。普通发热围巾多用碳纤维丝或金属丝，热量沿丝线分布。石墨烯方案在5℃环境下约3—4分钟达到舒适温度，碳纤维丝方案约5—6分钟。石墨烯膜片有正温度系数效应，温度越高电阻越大、功率自动下降；碳纤维丝需要额外的温控芯片来调节。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "碳纤维加热马甲的电池能带上飞机吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "马甲配套的10000mAh移动电源额定能量约37Wh，低于民航规定的100Wh随身携带上限，可以带上飞机但必须随身携带、不能托运。20000mAh版本能量约74Wh，同样在100Wh以内。超过160Wh的充电宝禁止携带。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自发热袜不充电为什么能发热？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自发热袜利用人体皮肤蒸发的水分与吸湿发热纤维中的亲水基团结合，释放热量。发热量有限，通常能让足部体感温度提升2—3℃。实际效果取决于袜子贴肤程度和活动量。洗涤30次后纤维的吸湿发热性能会有一定衰减。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "温控围巾的12区发热和8区发热差别大吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "12区中实际功率密度较高的是8块，另外4块分布在颈后下方和锁骨两侧作为辅助补偿。官方测试显示颈部平均温度从34.2℃提升到36.8℃，达到舒适温度时间缩短约40秒。体感差异主要在颈后下方，穿低领毛衣时Pro 2代的覆盖优势更明显。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "加热服饰可以用洗衣机洗吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "需要看具体产品的防水等级和电池仓结构。温控围巾Pro 2代和碳纤维马甲要求取出电池、发热组件拉链封口后放入洗衣袋，轻柔模式、水温不超过30℃。不能烘干、拧干、熨烫。护膝和护腰的电池仓是分离式设计，取出后可手洗。自发热袜不含电子元件，常规机洗即可，建议翻面洗。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "温控护膝的XL码和标准码差多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XL码绑带长度从标准码的42cm调整到48cm，适合腿围55cm以上的用户。发热区域和电池配置跟标准码一致，总功率7W，中档续航约5小时。此前标准码绑带偏短的问题集中在腿围52—55cm的用户群体。腿围50cm以下建议选标准码。"
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+(function() {
+  // 汉堡菜单
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileLinks = mobileNav.querySelectorAll('a');
+
+  hamburger.addEventListener('click', function() {
+    var isOpen = mobileNav.classList.contains('open');
+    mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', !isOpen);
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+
+  mobileNav.addEventListener('click', function(e) {
+    if (e.target === mobileNav) {
+      closeMobileNav();
+    }
+  });
+
+  mobileLinks.forEach(function(link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
+
+  // 回到顶部
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > window.innerHeight) {
+      backTop.classList.add('visible');
+    } else {
+      backTop.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  backTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 侧栏频道高亮
+  var sections = document.querySelectorAll('.section');
+  var channelLinks = document.querySelectorAll('.channel-list a');
+
+  window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY + 120;
+    var currentId = '';
+    sections.forEach(function(sec) {
+      if (sec.offsetTop <= scrollPos) {
+        currentId = sec.id;
+      }
+    });
+    channelLinks.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+    });
+  }, { passive: true });
+
+  // 搜索功能（本地筛选）
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var mainContent = document.getElementById('mainContent');
+
+  function doSearch() {
+    var query = searchInput.value.trim().toLowerCase();
+    // 清除旧的无结果提示
+    var oldEmpty = document.querySelector('.search-empty');
+    if (oldEmpty) oldEmpty.remove();
+
+    var sections = mainContent.querySelectorAll('.section');
+    var found = 0;
+
+    if (!query) {
+      sections.forEach(function(sec) { sec.style.display = ''; });
+      return;
+    }
+
+    sections.forEach(function(sec) {
+      var text = sec.textContent.toLowerCase();
+      var match = text.indexOf(query) > -1;
+      sec.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+
+    if (found === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'search-empty show';
+      empty.textContent = '没有找到包含“' + searchInput.value.trim() + '”的内容，请尝试其他关键词。';
+      mainContent.appendChild(empty);
+    }
+  }
+
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doSearch();
+  });
+  searchInput.addEventListener('input', function() {
+    if (searchInput.value.trim() === '') {
+      var oldEmpty = document.querySelector('.search-empty');
+      if (oldEmpty) oldEmpty.remove();
+      mainContent.querySelectorAll('.section').forEach(function(sec) { sec.style.display = ''; });
+    }
+  });
+})();
+</script>
+
+</body>
+        </html>
