@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>51每日大赛困困狗 - 每日创意作品与互动社区</title>
+<meta name="description" content="51每日大赛困困狗是每日创意作品聚合页，汇总困困狗主题绘画、短视频、梗图及赛事动态，包含精选推荐、最新更新、分类入口与深度解析，适合关注每日大赛与困困狗创作的用户浏览。">
+<meta name="keywords" content="51每日大赛困困狗">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f2c94c'/%3E%3Ccircle cx='16' cy='16' r='12' fill='%23f2994a'/%3E%3Ccircle cx='12' cy='13' r='2' fill='%23333'/%3E%3Ccircle cx='20' cy='13' r='2' fill='%23333'/%3E%3Cpath d='M12 20 Q16 24 20 20' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#f2994a;
+  --brand-light:#fbd7a5;
+  --brand-dark:#c76b1e;
+  --bg:#fdfaf6;
+  --surface:#ffffff;
+  --text:#1e1e1e;
+  --text-secondary:#5c5c5c;
+  --text-tertiary:#8a8a8a;
+  --line:#e8e0d5;
+  --radius-card:14px;
+  --radius-btn:10px;
+  --radius-tag:20px;
+  --radius-banner:18px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md:0 8px 24px rgba(0,0,0,0.08);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --header-h:64px;
+  --notice-h:44px;
+  --sticky-offset:calc(var(--header-h) + var(--notice-h));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+
+/* 吸顶公告条 */
+.notice-bar{
+  height:var(--notice-h);background:linear-gradient(90deg,#2d2d2d,#1a1a1a);
+  color:#fbd7a5;font-size:13px;display:flex;align-items:center;justify-content:center;
+  gap:28px;padding:0 16px;position:sticky;top:0;z-index:100;
+  overflow:hidden;white-space:nowrap;
+}
+.notice-bar .brand-mark{font-weight:700;color:#f2994a;letter-spacing:0.5px}
+.notice-bar .notice-item{display:inline-flex;align-items:center;gap:8px;opacity:0.92}
+.notice-bar .dot{width:5px;height:5px;border-radius:50%;background:#f2994a;flex-shrink:0}
+.notice-bar time{color:#fbd7a5;font-variant-numeric:tabular-nums}
+
+/* 吸顶页头 */
+.site-header{
+  height:var(--header-h);background:rgba(253,250,246,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);position:sticky;top:var(--notice-h);z-index:90;
+  display:flex;align-items:center;padding:0 24px;
+}
+.header-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:24px;width:100%}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo svg{width:34px;height:34px}
+.logo-text{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--text);white-space:nowrap}
+.main-nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;flex:1;justify-content:center}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  padding:7px 14px;border-radius:var(--radius-btn);font-size:14px;color:var(--text-secondary);
+  white-space:nowrap;transition:background 0.2s,color 0.2s;font-weight:500;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--brand-light);color:var(--brand-dark);outline:none}
+.header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.search-box{
+  display:flex;align-items:center;gap:6px;background:#f3ede4;border-radius:var(--radius-tag);
+  padding:6px 14px;font-size:13px;
+}
+.search-box input{
+  border:none;background:transparent;outline:none;font-size:13px;width:120px;color:var(--text);
+}
+.search-box input::placeholder{color:var(--text-tertiary)}
+.search-box button{font-size:13px;color:var(--brand-dark);font-weight:600}
+.hamburger{display:none;flex-direction:column;gap:4px;padding:8px;border-radius:8px}
+.hamburger span{width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform 0.25s,opacity 0.25s}
+
+/* 主容器 */
+.container{max-width:1320px;margin:0 auto;padding:0 24px}
+
+/* 首屏 */
+.hero{
+  background:linear-gradient(135deg,#fff5e6 0%,#fdfaf6 55%,#fef9f0 100%);
+  border-radius:var(--radius-banner);margin:24px 0 28px;padding:48px 44px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;
+  border-radius:50%;background:var(--brand-light);opacity:0.35;
+}
+.hero-content{position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;
+  font-size:12px;font-weight:700;padding:4px 14px;border-radius:var(--radius-tag);margin-bottom:16px;
+  letter-spacing:0.5px;
+}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.2;letter-spacing:-1px;margin-bottom:14px;color:var(--text)}
+.hero-desc{font-size:15px;color:var(--text-secondary);line-height:1.75;max-width:480px;margin-bottom:24px}
+.hero-desc strong{color:var(--brand-dark);font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--brand);color:#fff;padding:11px 28px;border-radius:var(--radius-btn);
+  font-weight:700;font-size:14px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+  box-shadow:0 4px 14px rgba(242,153,74,0.35);display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(242,153,74,0.45)}
+.btn-secondary{
+  background:var(--surface);color:var(--text);padding:11px 24px;border-radius:var(--radius-btn);
+  font-weight:600;font-size:14px;border:1.5px solid var(--line);transition:border-color 0.2s,background 0.2s;
+}
+.btn-secondary:hover{border-color:var(--brand);background:#fff8ef}
+.hero-visual{position:relative;z-index:2;display:flex;justify-content:center;align-items:center}
+.hero-visual svg{width:100%;max-width:400px;height:auto;filter:drop-shadow(0 8px 24px rgba(242,153,74,0.15))}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-visual svg .float-el{animation:float 4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.hero-visual svg .float-el{animation:none}}
+
+/* 三栏布局 */
+.layout-three{
+  display:grid;grid-template-columns:170px 1fr 240px;gap:24px;align-items:start;
+}
+
+/* 左频道索引 */
+.channel-index{
+  position:sticky;top:calc(var(--sticky-offset) + 16px);
+  background:var(--surface);border-radius:var(--radius-card);padding:18px 14px;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+}
+.channel-index h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-tertiary);margin-bottom:12px;padding-left:6px}
+.channel-index a{
+  display:block;padding:8px 10px;border-radius:8px;font-size:13.5px;color:var(--text-secondary);
+  transition:background 0.2s,color 0.2s;margin-bottom:2px;font-weight:500;
+}
+.channel-index a:hover,.channel-index a.active{background:var(--brand-light);color:var(--brand-dark);font-weight:600}
+
+/* 右辅助栏 */
+.side-panel{
+  position:sticky;top:calc(var(--sticky-offset) + 16px);
+  display:flex;flex-direction:column;gap:20px;
+}
+.side-card{
+  background:var(--surface);border-radius:var(--radius-card);padding:18px 16px;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+}
+.side-card h3{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text);display:flex;align-items:center;gap:6px}
+.side-card h3::before{content:"";width:4px;height:14px;background:var(--brand);border-radius:2px;display:inline-block}
+.hot-list li{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.hot-list li:last-child{border-bottom:none}
+.hot-rank{font-weight:800;color:var(--brand);font-size:12px;min-width:18px;font-variant-numeric:tabular-nums;padding-top:1px}
+.hot-list a{color:var(--text-secondary);transition:color 0.2s}
+.hot-list a:hover{color:var(--brand-dark)}
+.update-feed li{padding:8px 0;font-size:12.5px;color:var(--text-secondary);border-bottom:1px dashed var(--line);line-height:1.5}
+.update-feed li:last-child{border-bottom:none}
+.update-feed time{display:block;font-size:11px;color:var(--text-tertiary);margin-top:2px}
+
+/* 主内容区 */
+.main-col{min-width:0}
+.section{background:var(--surface);border-radius:var(--radius-card);padding:28px 26px;margin-bottom:24px;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.section-header h2{font-size:19px;font-weight:800;letter-spacing:-0.3px;color:var(--text)}
+.section-header h2 span{color:var(--brand);font-size:14px;font-weight:600;margin-left:8px}
+.section-desc{font-size:13px;color:var(--text-tertiary);max-width:520px;line-height:1.6}
+
+/* 概览 */
+.overview-text p{font-size:14.5px;color:var(--text-secondary);line-height:1.85;margin-bottom:12px}
+.overview-text p:last-child{margin-bottom:0}
+.overview-text strong{color:var(--brand-dark);font-weight:600}
+.overview-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.overview-tags span{background:#fdf0e0;color:var(--brand-dark);font-size:12px;padding:4px 12px;border-radius:var(--radius-tag);font-weight:500}
+
+/* 精选卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.content-card{
+  border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;
+  background:var(--surface);transition:box-shadow 0.25s,transform 0.2s;display:flex;flex-direction:column;
+}
+.content-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.content-card .card-img{width:100%;height:150px;object-fit:cover;background:#f3ede4}
+.content-card .card-body{padding:14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.type-tag{
+  display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:var(--radius-tag);
+  background:var(--brand-light);color:var(--brand-dark);align-self:flex-start;letter-spacing:0.3px;
+}
+.card-title{font-size:15px;font-weight:700;line-height:1.4;color:var(--text)}
+.card-desc{font-size:12.5px;color:var(--text-secondary);line-height:1.6;flex:1}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px;font-size:11px}
+.card-meta span{background:#f5f0e8;color:var(--text-tertiary);padding:2px 8px;border-radius:4px}
+.card-footer{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--text-tertiary);padding-top:8px;border-top:1px solid var(--line)}
+.card-footer .heat{color:var(--brand);font-weight:700}
+
+/* 最新更新列表 */
+.update-list li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.update-list li:last-child{border-bottom:none;padding-bottom:0}
+.update-list time{font-size:12px;color:var(--text-tertiary);min-width:52px;font-variant-numeric:tabular-nums;padding-top:2px}
+.update-list .update-main{flex:1;min-width:0}
+.update-list h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.4}
+.update-list .update-summary{font-size:12.5px;color:var(--text-secondary);line-height:1.5}
+.update-list .update-type{font-size:11px;color:var(--brand-dark);background:var(--brand-light);padding:1px 8px;border-radius:var(--radius-tag);white-space:nowrap;flex-shrink:0;margin-top:2px;font-weight:600}
+
+/* 分类入口 */
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.category-item{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  padding:18px 10px;border-radius:var(--radius-card);border:1px solid var(--line);
+  background:#fdfaf5;transition:background 0.2s,border-color 0.2s;text-align:center;
+}
+.category-item:hover{background:var(--brand-light);border-color:var(--brand)}
+.category-item .cat-icon{font-size:24px;line-height:1}
+.category-item .cat-name{font-size:13px;font-weight:600;color:var(--text)}
+.category-item .cat-count{font-size:11px;color:var(--text-tertiary)}
+
+/* 深度解析 */
+.deep-dive h3{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--text);padding-left:12px;border-left:3px solid var(--brand)}
+.deep-dive h3:first-child{margin-top:0}
+.deep-dive p{font-size:14px;color:var(--text-secondary);line-height:1.85;margin-bottom:12px}
+.deep-dive ul,.deep-dive ol{margin:10px 0 14px 18px;font-size:14px;color:var(--text-secondary);line-height:1.8}
+.deep-dive li{margin-bottom:6px}
+.deep-dive strong{color:var(--text);font-weight:600}
+.deep-dive .note-box{background:#fdf6ed;border-left:3px solid var(--brand);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;font-size:13.5px;color:var(--text-secondary);line-height:1.75}
+.deep-dive .compare-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.deep-dive .compare-table th{background:#f5ede2;color:var(--text);font-weight:700;padding:10px 12px;text-align:left;border:1px solid var(--line)}
+.deep-dive .compare-table td{padding:10px 12px;border:1px solid var(--line);color:var(--text-secondary);line-height:1.6}
+.deep-dive .compare-table tr:nth-child(even) td{background:#fdfaf6}
+
+/* 体验指南 */
+.guide-steps{display:flex;flex-direction:column;gap:16px}
+.guide-step{display:flex;gap:16px;align-items:flex-start}
+.step-num{
+  width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;margin-top:2px;
+}
+.step-content h4{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text)}
+.step-content p{font-size:13.5px;color:var(--text-secondary);line-height:1.7}
+
+/* FAQ */
+.faq-list details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq-list details:last-child{border-bottom:none;padding-bottom:0}
+.faq-list summary{
+  font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;color:var(--text);transition:color 0.2s;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:hover{color:var(--brand-dark)}
+.faq-list summary::after{content:"＋";font-size:18px;color:var(--brand);font-weight:400;transition:transform 0.2s;flex-shrink:0}
+.faq-list details[open] summary::after{content:"－";transform:rotate(0deg)}
+.faq-list .faq-answer{padding:10px 0 2px;font-size:13.5px;color:var(--text-secondary);line-height:1.75}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.comment-card{background:#fdfaf6;border-radius:var(--radius-card);padding:14px 16px;border:1px solid var(--line);font-size:13px;line-height:1.65}
+.comment-card .comment-user{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.comment-avatar{
+  width:28px;height:28px;border-radius:50%;background:var(--brand-light);color:var(--brand-dark);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;
+}
+.comment-nick{font-weight:600;font-size:12.5px;color:var(--text)}
+.comment-card .comment-text{color:var(--text-secondary)}
+.comment-card .comment-text em{color:var(--brand-dark);font-style:normal;font-weight:500}
+
+/* 相关资讯 */
+.news-list li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.news-list li:last-child{border-bottom:none;padding-bottom:0}
+.news-date{font-size:11.5px;color:var(--text-tertiary);min-width:72px;font-variant-numeric:tabular-nums;padding-top:3px}
+.news-body h4{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.4}
+.news-body p{font-size:12.5px;color:var(--text-secondary);line-height:1.55}
+
+/* 相关推荐 */
+.recommend-tags{display:flex;flex-wrap:wrap;gap:10px}
+.recommend-tags a{
+  font-size:13px;padding:7px 16px;border-radius:var(--radius-tag);border:1px solid var(--line);
+  background:var(--surface);color:var(--text-secondary);transition:all 0.2s;font-weight:500;
+}
+.recommend-tags a:hover{border-color:var(--brand);color:var(--brand-dark);background:var(--brand-light)}
+
+/* 补充板块 - 时间线 */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:"";position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:var(--line)}
+.timeline-item{position:relative;margin-bottom:18px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-24px;top:5px;width:12px;height:12px;border-radius:50%;
+  background:var(--brand);border:2px solid var(--surface);box-shadow:0 0 0 2px var(--brand);
+}
+.timeline-item time{font-size:11.5px;color:var(--text-tertiary);font-weight:600;display:block;margin-bottom:2px}
+.timeline-item h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.timeline-item p{font-size:12.5px;color:var(--text-secondary);line-height:1.6}
+
+/* 投稿板块 */
+.submit-panel{
+  background:linear-gradient(135deg,#fff7eb,#fef9f0);border:1.5px dashed var(--brand);
+  border-radius:var(--radius-card);padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+}
+.submit-panel .submit-text h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.submit-panel .submit-text p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+.submit-panel .btn-primary{font-size:13px;padding:9px 22px;white-space:nowrap}
+
+/* 页尾 */
+.site-footer{background:#1e1e1e;color:#c9c0b4;margin-top:48px;padding:40px 24px 32px}
+.footer-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-brand .logo-text{color:#f5f0e8;font-size:18px;margin-bottom:10px;display:block}
+.footer-brand p{font-size:13px;line-height:1.7;color:#a89f93;max-width:340px}
+.footer-col h4{font-size:13px;font-weight:700;color:#f5f0e8;margin-bottom:12px;letter-spacing:0.5px}
+.footer-col a{display:block;font-size:12.5px;color:#a89f93;padding:3px 0;transition:color 0.2s}
+.footer-col a:hover{color:var(--brand)}
+.footer-bottom{max-width:1320px;margin:28px auto 0;padding-top:20px;border-top:1px solid #3a3a3a;font-size:12px;color:#7a7267;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* 回到顶部 */
+.back-top{
+  position:fixed;bottom:28px;right:28px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:20px;box-shadow:0 4px 16px rgba(242,153,74,0.4);opacity:0;pointer-events:none;
+  transition:opacity 0.3s,transform 0.2s;z-index:80;
+}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{transform:translateY(-3px)}
+
+/* 移动端遮罩 */
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:85}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .layout-three{grid-template-columns:1fr 240px}
+  .channel-index{display:none}
+  .hero{grid-template-columns:1fr;padding:32px 28px;gap:24px}
+  .hero-visual svg{max-width:280px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .category-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:740px){
+  .notice-bar{font-size:11.5px;gap:14px;justify-content:flex-start;overflow-x:auto;padding:0 12px}
+  .notice-bar .notice-item{flex-shrink:0}
+  .site-header{padding:0 14px}
+  .header-inner{gap:10px}
+  .main-nav{
+    display:none;position:fixed;top:calc(var(--sticky-offset));left:0;right:0;bottom:0;
+    background:var(--bg);z-index:86;flex-direction:column;padding:16px 20px;gap:2px;
+    justify-content:flex-start;overflow-y:auto;
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{font-size:16px;padding:12px 14px;border-radius:10px}
+  .hamburger{display:flex}
+  .search-box{display:none}
+  .mobile-overlay.active{display:block}
+  .layout-three{grid-template-columns:1fr}
+  .side-panel{position:static;flex-direction:row;flex-wrap:wrap}
+  .side-card{flex:1;min-width:220px}
+  .hero{padding:24px 18px;border-radius:14px}
+  .hero h1{font-size:26px}
+  .hero-desc{font-size:14px}
+  .section{padding:20px 16px}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .card-grid{grid-template-columns:1fr}
+  .comment-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-brand p{max-width:100%}
+  .back-top{bottom:20px;right:16px;width:40px;height:40px}
+  .main-nav a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice-bar" id="noticeBar">
+  <span class="brand-mark">51每日大赛困困狗</span>
+  <span class="notice-item"><span class="dot"></span><time datetime="2026-11-08">11月8日</time> 困困狗「太空漫游」命题赛开启</span>
+  <span class="notice-item"><span class="dot"></span>新增 <strong style="color:#f2994a">47</strong> 件投稿作品</span>
+  <span class="notice-item"><span class="dot"></span>第38期周榜已更新</span>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#hero" class="logo" aria-label="51每日大赛困困狗首页">
+      <svg viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="9" fill="#f2994a"/>
+        <circle cx="17" cy="17" r="11" fill="#fbd7a5"/>
+        <circle cx="13" cy="14" r="2" fill="#1e1e1e"/>
+        <circle cx="21" cy="14" r="2" fill="#1e1e1e"/>
+        <path d="M13 21 Q17 25 21 21" stroke="#1e1e1e" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M10 8 L12 4 L15 7" fill="#c76b1e"/>
+        <path d="M24 8 L22 4 L19 7" fill="#c76b1e"/>
+      </svg>
+      <span class="logo-text">51每日大赛困困狗</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">赛事概览</a>
+      <a href="/#featured">精选作品</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">网友评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#timeline">赛事时间线</a>
+      <a href="/#submit">投稿互动</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜索作品/作者…" aria-label="搜索站内内容">
+        <button type="button" id="searchBtn" aria-label="执行搜索">搜</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<main>
+  <!-- 首屏 -->
+  <div class="container">
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="hero-badge">每日创意 · 实时更新</span>
+        <h1>51每日大赛困困狗</h1>
+        <p class="hero-desc">汇集困困狗主题的<strong>绘画、短视频、梗图、手工</strong>与赛事动态。每日命题赛、周榜排行、作者访谈与作品解析，给同好一个集中看片、学思路、找灵感的地方。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">看今日精选 →</a>
+          <a href="/#submit" class="btn-secondary">投稿参赛</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="40" width="360" height="260" rx="24" fill="#fff5e6"/>
+          <circle cx="200" cy="180" r="90" fill="#fbd7a5"/>
+          <circle cx="160" cy="155" r="12" fill="#1e1e1e"/>
+          <circle cx="240" cy="155" r="12" fill="#1e1e1e"/>
+          <path d="M165 210 Q200 245 235 210" stroke="#1e1e1e" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="130" cy="200" rx="14" ry="8" fill="#f2994a" opacity="0.35"/>
+          <ellipse cx="270" cy="200" rx="14" ry="8" fill="#f2994a" opacity="0.35"/>
+          <path d="M130 80 L145 50 L165 78" fill="#f2994a"/>
+          <path d="M270 80 L255 50 L235 78" fill="#f2994a"/>
+          <circle cx="200" cy="110" r="6" fill="#f2994a" class="float-el"/>
+          <rect x="60" y="270" width="80" height="28" rx="14" fill="#f2994a" opacity="0.6"/>
+          <text x="100" y="288" text-anchor="middle" font-size="12" fill="#fff" font-family="sans-serif">每日大赛</text>
+          <rect x="260" y="270" width="80" height="28" rx="14" fill="#f2994a" opacity="0.6"/>
+          <text x="300" y="288" text-anchor="middle" font-size="12" fill="#fff" font-family="sans-serif">困困狗</text>
+        </svg>
+      </div>
+    </section>
+  </div>
+
+  <div class="container">
+    <div class="layout-three">
+      <!-- 左频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <h3>频道索引</h3>
+        <a href="/#overview" class="active">赛事概览</a>
+        <a href="/#featured">精选作品</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">网友评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">赛事时间线</a>
+        <a href="/#submit">投稿互动</a>
+      </aside>
+
+      <!-- 中主内容 -->
+      <div class="main-col">
+
+        <!-- 概览 -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2>困困狗赛事领域概览 <span>2026 秋季赛季</span></h2>
+          </div>
+          <div class="overview-text">
+            <p>困困狗这个形象最早在 2024 年底的贴吧手绘接龙里出现，一只总是一副没睡醒表情的黄色小狗。到 2026 年 11 月，围绕它已经形成一套相当稳定的创作生态：<strong>每日命题画</strong>、<strong>15 秒短视频</strong>、<strong>表情包改图</strong>、<strong>黏土手办</strong>四条主线并行，每个方向都有固定的作者群和评价习惯。</p>
+            <p>每日大赛的命题机制是每天早上 7 点在赛事页公布一个关键词，比如 11 月 8 日的「太空漫游」、11 月 6 日的「便利店夜班」，参赛者在 24 小时内提交作品。评审分三轮：初筛看完成度，复筛看创意偏离度，终审看制作精度。周榜取每日前 10 名积分累加，月榜再叠加互动数据。</p>
+            <p>当前值得关注的几个方向：<strong>黏土定格动画</strong>投稿量比三个月前涨了 2.3 倍，但完成度两极分化严重；<strong>表情包二创</strong>在微信和 QQ 群传播极快，11 月 5 日「打工人困困」系列单日转发破 8 万次；<strong>场景插画</strong>赛道开始出现系列化连载，作者「狗子不睡」的《困困狗打工记》已经更新到第 22 话。</p>
+            <div class="overview-tags">
+              <span>每日命题画</span><span>15秒短视频</span><span>表情包改图</span><span>黏土定格</span><span>周榜积分</span><span>场景插画</span><span>二创授权</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 精选推荐 -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2>精选作品推荐 <span>本周编辑挑选</span></h2>
+            <p class="section-desc">按创意偏离度、完成度和传播表现综合选出，每件附具体看点。</p>
+          </div>
+          <div class="card-grid" id="featuredGrid">
+            <article class="content-card" data-searchable="太空漫游 黏土定格 阿柑">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_space/400/300" width="400" height="300" loading="lazy" alt="困困狗太空漫游黏土定格作品封面">
+              <div class="card-body">
+                <span class="type-tag">黏土定格</span>
+                <h3 class="card-title">《困困狗太空漫游》第3集</h3>
+                <p class="card-desc">作者阿柑用 240 帧定格还原困困狗在空间站打瞌睡，失重状态下狗毛漂浮的细节做了 6 层分层拍摄。</p>
+                <div class="card-meta"><span>11月8日</span><span>时长 48秒</span><span>帧数 240</span></div>
+                <div class="card-footer"><span>作者：阿柑</span><span class="heat">热度 9.2k</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-searchable="便利店夜班 场景插画 狗子不睡">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_store/400/300" width="400" height="300" loading="lazy" alt="困困狗便利店夜班场景插画">
+              <div class="card-body">
+                <span class="type-tag">场景插画</span>
+                <h3 class="card-title">便利店夜班·收银台打盹</h3>
+                <p class="card-desc">狗子不睡《困困狗打工记》第 22 话，画面右侧货架藏了 11 个彩蛋，包括前作出现的泡面碗。</p>
+                <div class="card-meta"><span>11月6日</span><span>连载第22话</span><span>彩蛋11处</span></div>
+                <div class="card-footer"><span>作者：狗子不睡</span><span class="heat">热度 7.8k</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-searchable="表情包 打工人 微信 二创">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_work/400/300" width="400" height="300" loading="lazy" alt="困困狗打工人表情包系列截图">
+              <div class="card-body">
+                <span class="type-tag">表情包</span>
+                <h3 class="card-title">「打工人困困」表情包系列</h3>
+                <p class="card-desc">12 张一套，覆盖早会、加班、摸鱼、周五下班四个场景，11月5日单日微信转发破 8 万次。</p>
+                <div class="card-meta"><span>11月5日</span><span>12张/套</span><span>转发8万+</span></div>
+                <div class="card-footer"><span>作者：狗蛋设计</span><span class="heat">热度 12.5k</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-searchable="15秒短视频 地铁 通勤 小黄狗">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_subway/400/300" width="400" height="300" loading="lazy" alt="困困狗地铁通勤短视频截图">
+              <div class="card-body">
+                <span class="type-tag">短视频</span>
+                <h3 class="card-title">困困狗挤地铁·15秒循环</h3>
+                <p class="card-desc">作者小黄狗用手机逐格拍摄，困困狗被人群挤到玻璃门上的表情做了 8 种变化，BGM 卡点准确。</p>
+                <div class="card-meta"><span>11月7日</span><span>时长15秒</span><span>点赞2.3万</span></div>
+                <div class="card-footer"><span>作者：小黄狗</span><span class="heat">热度 8.6k</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-searchable="手办 黏土 困困狗 睡觉 微缩">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_figure/400/300" width="400" height="300" loading="lazy" alt="困困狗睡觉场景黏土手办">
+              <div class="card-body">
+                <span class="type-tag">黏土手办</span>
+                <h3 class="card-title">困困狗睡在键盘上·微缩场景</h3>
+                <p class="card-desc">1:12 比例微缩键盘，每个键帽独立 sculpt，困困狗的口水用 UV 胶拉丝，晾干花了 3 天。</p>
+                <div class="card-meta"><span>11月4日</span><span>1:12比例</span><span>制作7天</span></div>
+                <div class="card-footer"><span>作者：捏捏星球</span><span class="heat">热度 6.4k</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-searchable="梗图 改图 猫和老鼠 困困狗">
+              <img class="card-img" src="https://picsum.photos/seed/kunkun_meme/400/300" width="400" height="300" loading="lazy" alt="困困狗改图梗图合集">
+              <div class="card-body">
+                <span class="type-tag">梗图改图</span>
+                <h3 class="card-title">困困狗版《猫和老鼠》名场面</h3>
+                <p class="card-desc">把困困狗脸 P 进汤姆猫被压扁、杰瑞鼠偷奶酪等 9 个经典帧，第 4 张「困困狗版保龄球」传播最广。</p>
+                <div class="card-meta"><span>11月3日</span><span>9张合集</span><span>转发3.1万</span></div>
+                <div class="card-footer"><span>作者：P图老张</span><span class="heat">热度 5.9k</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section class="section" id="updates">
+          <div class="section-header">
+            <h2>最新更新与动态 <span>11月8日</span></h2>
+            <p class="section-desc">今日命题赛进展、新投稿与榜单变化。</p>
+          </div>
+          <ul class="update-list">
+            <li>
+              <time datetime="2026-11-08">11-08</time>
+              <div class="update-main">
+                <h4>「太空漫游」命题赛已收 47 件作品</h4>
+                <p class="update-summary">黏土定格类占比 34%，插画类 41%，短视频类 25%。初筛将在今晚 22:00 截止。</p>
+              </div>
+              <span class="update-type">命题赛</span>
+            </li>
+            <li>
+              <time datetime="2026-11-08">11-08</time>
+              <div class="update-main">
+                <h4>阿柑发布《太空漫游》第3集制作花絮</h4>
+                <p class="update-summary">花絮里展示了狗毛漂浮的 6 层分层拍摄法，评论区有人求教程，阿柑回复「周末整理」。 </p>
+              </div>
+              <span class="update-type">新投稿</span>
+            </li>
+            <li>
+              <time datetime="2026-11-07">11-07</time>
+              <div class="update-main">
+                <h4>第38期周榜公布：狗子不睡登顶</h4>
+                <p class="update-summary">狗子不睡以 5 次日榜前十、总分 86 分排第一，阿柑以 3 分之差第二，小黄狗第三。</p>
+              </div>
+              <span class="update-type">榜单</span>
+            </li>
+            <li>
+              <time datetime="2026-11-07">11-07</time>
+              <div class="update-main">
+                <h4>「便利店夜班」作品数突破 120 件</h4>
+                <p class="update-summary">该命题累计收到 123 件作品，其中 41 件含熬夜/打盹元素，评审组称「同质化偏高」。</p>
+              </div>
+              <span class="update-type">统计</span>
+            </li>
+            <li>
+              <time datetime="2026-11-06">11-06</time>
+              <div class="update-main">
+                <h4>小黄狗「地铁通勤」短视频被搬运至抖音</h4>
+                <p class="update-summary">原视频 11 月 5 日发布于赛事页，6 日出现未经授权搬运，播放量 14 万，作者已提交投诉。</p>
+              </div>
+              <span class="update-type">版权</span>
+            </li>
+            <li>
+              <time datetime="2026-11-06">11-06</time>
+              <div class="update-main">
+                <h4>本周新增「定格动画」标签</h4>
+                <p class="update-summary">赛事页分类新增定格动画独立标签，此前混在短视频类，目前已有 28 件作品打标。</p>
+              </div>
+              <span class="update-type">功能</span>
+            </li>
+            <li>
+              <time datetime="2026-11-05">11-05</time>
+              <div class="update-main">
+                <h4>「打工人困困」表情包单日转发 8 万次</h4>
+                <p class="update-summary">狗蛋设计这套 12 张表情包在微信和 QQ 群扩散，赛事页下载量 3.2 万次，创单套纪录。</p>
+              </div>
+              <span class="update-type">传播</span>
+            </li>
+            <li>
+              <time datetime="2026-11-05">11-05</time>
+              <div class="update-main">
+                <h4>评审组公布 11 月评分细则微调</h4>
+                <p class="update-summary">创意偏离度权重从 30% 上调至 35%，完成度从 40% 下调至 35%，精度维持 30% 不变。</p>
+              </div>
+              <span class="update-type">规则</span>
+            </li>
+            <li>
+              <time datetime="2026-11-04">11-04</time>
+              <div class="update-main">
+                <h4>捏捏星球微缩键盘手办完工</h4>
+                <p class="update-summary">1:12 比例、独立键帽 84 个，口水拉丝用 UV 胶晾干 3 天，作者称「再也不做键盘了」。</p>
+              </div>
+              <span class="update-type">新投稿</span>
+            </li>
+            <li>
+              <time datetime="2026-11-03">11-03</time>
+              <div class="update-main">
+                <h4>困困狗二创授权规则更新</h4>
+                <p class="update-summary">个人非商用二创无需申请，商用需邮件报备，周边贩售单次不超过 50 件可走简化流程。</p>
+              </div>
+              <span class="update-type">规则</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2>作品分类入口 <span>按形态筛选</span></h2>
+            <p class="section-desc">8 个垂类入口，点击查看对应类别下全部作品。</p>
+          </div>
+          <div class="category-grid">
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🎨</span>
+              <span class="cat-name">场景插画</span>
+              <span class="cat-count">286 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🎬</span>
+              <span class="cat-name">15秒短视频</span>
+              <span class="cat-count">174 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🧸</span>
+              <span class="cat-name">黏土手办</span>
+              <span class="cat-count">98 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🎞️</span>
+              <span class="cat-name">定格动画</span>
+              <span class="cat-count">62 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">😂</span>
+              <span class="cat-name">表情包改图</span>
+              <span class="cat-count">231 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🖼️</span>
+              <span class="cat-name">梗图二创</span>
+              <span class="cat-count">159 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">📦</span>
+              <span class="cat-name">周边实物</span>
+              <span class="cat-count">47 件</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">📖</span>
+              <span class="cat-name">连载漫画</span>
+              <span class="cat-count">36 件</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 深度解析 -->
+        <section class="section deep-dive" id="deep-dive">
+          <div class="section-header">
+            <h2>困困狗命题赛的评判逻辑与创作分层 <span>深度解析</span></h2>
+          </div>
+          <p>每天一个命题、24 小时提交窗口，这种节奏决定了困困狗大赛的作品质量和创作策略。从 11 月前两周的投稿数据看，完成度与创意偏离度之间的张力，比作者们想象的要大。</p>
+
+          <h3>命题赛的三轮筛选到底在筛什么</h3>
+          <p>初筛由 3 名值班评审在提交截止后 2 小时内完成，每人过一遍全部作品，标准只有一条——<strong>能不能看出困困狗</strong>。11 月 7 日「便利店夜班」命题，初筛淘汰了 19 件作品，其中 11 件是因为困困狗画得太像普通狗，缺少标志性的耷拉耳朵和半睁眼。复筛看创意偏离度，简单说就是「跟命题的关联有多巧」。11 月 8 日「太空漫游」命题里，阿柑把困困狗放在空间站打瞌睡，狗毛在失重下漂浮——这个处理把「漫游」和「困」两个词扣在一起，复筛全票通过。终审才看精度，黏土类的分层拍摄、插画类的光影细节在这一轮拉开差距。</p>
+          <div class="note-box">
+            <strong>可核对的结构：</strong>11 月评分细则调整后，创意偏离度权重 35%、完成度 35%、精度 30%。评审组在 11 月 5 日的公告里写明调整原因：前两周有 7 件精度很高但完全偏离命题的作品进入日榜前十，引发作者群讨论。
+          </div>
+
+          <h3>四条创作主线的成本与回报差异</h3>
+          <p>同样一个命题，不同形态的投入产出比差别明显。场景插画平均耗时 4—6 小时，短视频 6—10 小时，黏土手办 12—20 小时，定格动画轻松超过 30 小时。但日榜前十的构成里，插画占比 41%，短视频 25%，黏土与定格合计 34%。高投入的形态靠精度拿分，低投入的形态靠创意和时效性。</p>
+          <table class="compare-table">
+            <thead><tr><th>形态</th><th>平均耗时</th><th>日榜前十占比</th><th>典型得分点</th></tr></thead>
+            <tbody>
+              <tr><td>场景插画</td><td>4—6 小时</td><td>41%</td><td>构图巧思、彩蛋密度</td></tr>
+              <tr><td>15秒短视频</td><td>6—10 小时</td><td>25%</td><td>卡点、表情变化</td></tr>
+              <tr><td>黏土手办</td><td>12—20 小时</td><td>20%</td><td>材质细节、微缩场景</td></tr>
+              <tr><td>定格动画</td><td>30 小时以上</td><td>14%</td><td>帧数、分层拍摄</td></tr>
+            </tbody>
+          </table>
+          <p>定格动画的占比低，不代表评委不认。11 月 8 日阿柑的《太空漫游》第 3 集被三位评审同时标为「今日必看」，但这类作品一周只能出一件。作者如果追求日榜稳定性，插画和短视频更划算；如果想冲击月榜的高权重票，定格动画和黏土手办的单件得分上限更高。</p>
+
+          <h3>二创授权规则变化对投稿量的实际影响</h3>
+          <p>11 月 3 日更新的二创规则，把商用报备的门槛从「一律邮件申请」改成「单次 50 件以下走简化流程」。此前表情包作者狗蛋设计在 10 月做过一次小规模周边试售，卡在报备流程上拖了 9 天。新规则出来后的 5 天里，周边实物类投稿从 31 件涨到 47 件，涨幅约 52%。赛事页运营在 11 月 6 日的更新说明里提到，简化流程的审核周期是 3 个工作日，比原来缩短 6 天。</p>
+          <p>规则的松紧直接改变创作方向。10 月之前，表情包类作者很少做实物周边，因为授权流程成本高于收益；现在 50 件以下的小批量试水变得可行，狗蛋设计已经在 11 月 6 日上架了第一批 30 套「打工人困困」钥匙扣。这个变化对赛事本身的影响还需要观察——周边类作品的评分标准跟纯创作不同，评审组尚未公布实物类的独立评分细则。</p>
+
+          <h3>同一命题下的「撞车」与差异化策略</h3>
+          <p>「便利店夜班」命题累计收到 123 件作品，其中 41 件含熬夜或打盹元素，评审组在内部纪要里用了「同质化偏高」这个词。撞车最严重的是「困困狗趴在收银台睡着」这个构图，至少有 14 件作品采用了类似视角。狗子不睡的处理是把困困狗放在货架后面偷吃关东煮，收银台空着——同样扣「夜班」主题，但避开了正面睡觉的套路。11 月 6 日该作品发布后，评论区有作者说「看到这个构图就知道自己那版没戏了」。</p>
+          <p>差异化策略在黏土类里更明显。同一命题下，黏土作者倾向于做微缩场景而非单体手办，因为场景能塞进更多叙事细节，评审给分时也更容易找到记忆点。捏捏星球的键盘手办就是靠「键帽独立 sculpt」这个细节在 11 月 4 日的「工位」命题里拿到日榜第五。说白了，24 小时的窗口下，谁能在命题的第一层理解上再拐一个弯，谁就更容易被记住。</p>
+        </section>
+
+        <!-- 体验指南 -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2>作品浏览与判断路径 <span>给新观众的顺序建议</span></h2>
+            <p class="section-desc">先看什么、怎么判断一件作品值不值得花时间、同类作品怎么比较。</p>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <div class="step-content">
+                <h4>先看当日命题，再看作品</h4>
+                <p>每天的命题决定了作品的评价基准。不知道「太空漫游」是今天的命题，就看不懂阿柑为什么要把困困狗放进空间站。赛事页顶部每天 7 点更新命题词，先花 10 秒看一眼，再往下刷作品，判断会准很多。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <div class="step-content">
+                <h4>用「偏离度」筛第一轮</h4>
+                <p>看完标题和第一张图，问一句：这个作者对命题的理解有没有拐弯？直接画困困狗在太空飘是基础分，把「漫游」拆成失重状态下的狗毛漂浮才是加分项。偏离度高的作品未必精致，但通常更值得点开细看。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <div class="step-content">
+                <h4>同类作品横向比精度</h4>
+                <p>看黏土类作品时，比较键帽、毛发、口水拉丝这些细节的处理层数；看插画类作品时，比较彩蛋密度和光影逻辑。11 月 4 日「工位」命题下有三件键盘手办，捏捏星球那件赢在 84 个键帽全部独立 sculpt，另两件用了整块压模。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">4</span>
+              <div class="step-content">
+                <h4>看花絮比看成品信息更多</h4>
+                <p>阿柑、捏捏星球、狗子不睡这几位作者习惯在评论区或动态里贴制作过程。花絮能看出作者在哪个环节花了最多时间，也更容易判断一件作品的完成度是硬功夫还是取巧。11 月 8 日阿柑的花絮里，狗毛漂浮做了 6 层分层拍摄，这个细节在成品里只有 2 秒，但解释了为什么它比同类作品稳。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">5</span>
+              <div class="step-content">
+                <h4>表情包看传播场景，不看画功</h4>
+                <p>表情包类作品的评价维度和插画完全不同。狗蛋设计的「打工人困困」系列画功不算顶尖，但 12 张覆盖早会、加班、摸鱼、周五下班四个场景，每个场景都有明确的转发理由。看表情包时先想「这张我会在什么群里发」，比看线条精度有用。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2>常见问题 <span>关于困困狗大赛</span></h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>困困狗每日大赛的命题几点公布？</summary>
+              <div class="faq-answer">每天早上 7:00 在赛事页顶部更新当日命题词，同时公告条同步推送。提交窗口从命题公布开始，到当天 23:59 截止，合计约 17 小时。11 月 8 日的「太空漫游」就是在 7:00 整公布的。</div>
+            </details>
+            <details>
+              <summary>黏土手办类作品为什么在日榜前十占比不高？</summary>
+              <div class="faq-answer">制作耗时是主因。黏土手办平均 12—20 小时，定格动画超过 30 小时，而每日命题只给 17 小时窗口，大部分作者来不及完成。11 月 4 日「工位」命题的日榜前十里有 2 件黏土作品，都是提前一天知道命题方向、提前备料的作者。</div>
+            </details>
+            <details>
+              <summary>困困狗二创商用怎么报备？</summary>
+              <div class="faq-answer">11 月 3 日更新后的规则是：单次贩售 50 件以下走简化流程，提交作品图、贩售数量和渠道说明，审核周期 3 个工作日；超过 50 件需邮件申请，审核周期 7—10 天。个人非商用二创无需报备。狗蛋设计 11 月 6 日上架的 30 套钥匙扣走的就是简化流程。</div>
+            </details>
+            <details>
+              <summary>「便利店夜班」命题为什么被评审说同质化？</summary>
+              <div class="faq-answer">该命题累计 123 件作品里，41 件含熬夜或打盹元素，其中至少 14 件采用「困困狗趴在收银台睡着」的构图。评审组在内部纪要里提到这个数字，认为视角扎堆。狗子不睡的处理是把困困狗放在货架后偷吃关东煮、收银台空着，同样扣题但避开了正面睡觉的套路。</div>
+            </details>
+            <details>
+              <summary>周榜积分怎么算？</summary>
+              <div class="faq-answer">每日前 10 名按名次给分，第 1 名 12 分，第 2 名 10 分，第 3 名 8 分，第 4—6 名各 5 分，第 7—10 名各 3 分。一周累计后取总分排周榜。第 38 期周榜狗子不睡 86 分登顶，靠的是 5 次进入日榜前十，其中 2 次第一。</div>
+            </details>
+            <details>
+              <summary>表情包改图用了困困狗原图，需要标注出处吗？</summary>
+              <div class="faq-answer">需要。赛事规则要求二创作品在发布时标注原图作者或「困困狗官方形象」字样。11 月 5 日「打工人困困」系列在描述里注明了「形象源自赛事官方设定，二创改图」，这是简化流程审核通过的条件之一。未标注的作品在初筛阶段会被要求补充。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2>网友评论 <span>来自作者群与观众</span></h2>
+            <p class="section-desc">围绕具体作品、具体类型的真实讨论。</p>
+          </div>
+          <div class="comment-grid">
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">阿</span><span class="comment-nick">阿柑的小号</span></div>
+              <p class="comment-text">第3集那个狗毛漂浮，实际拍了 6 层，每层单独打光，后期叠了 4 版才出效果。有人问为什么不用绿幕，绿幕拍不出毛的透光感。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">狗</span><span class="comment-nick">狗子不睡</span></div>
+              <p class="comment-text">便利店第22话货架上的泡面碗是第 6 话出现过的那个，画的时候差点忘了。彩蛋越埋越多，后面可能要开个索引帖。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">小</span><span class="comment-nick">小黄狗</span></div>
+              <p class="comment-text">地铁那条被搬到抖音了，14 万播放，连水印都没去。已经提交投诉，等平台处理。搬运的比原发流量还高，挺无语的。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">捏</span><span class="comment-nick">捏捏星球</span></div>
+              <p class="comment-text">84 个键帽做完手指已经不是自己的了。下次命题要是「工位」相关，说什么也不碰键盘了，换鼠标。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">P</span><span class="comment-nick">P图老张</span></div>
+              <p class="comment-text">猫和老鼠那套第 4 张传播最广，但我自己觉得第 7 张「困困狗版保龄球」处理得更干净，可能大家还是喜欢汤姆被压扁那个梗。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">路</span><span class="comment-nick">路过看狗</span></div>
+              <p class="comment-text">每天 7 点蹲命题已经成习惯了。今天的「太空漫游」比前两天的「菜市场」好发挥，菜市场那个我想了半天不知道画什么。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">半</span><span class="comment-nick">半截铅笔</span></div>
+              <p class="comment-text">便利店那期撞车真的严重，我刷到第四张趴收银台的就没再往下看了。狗子不睡那个货架视角确实巧。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">困</span><span class="comment-nick">困困狗头号粉</span></div>
+              <p class="comment-text">表情包那套钥匙扣买了，实物比图小一圈，但做工还行。30 套秒没，希望补货。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">周</span><span class="comment-nick">周末做手工</span></div>
+              <p class="comment-text">定格动画耗时太夸张了，我试过一次，拍了 80 帧就放弃了。阿柑能稳定出片是真的顶。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">路</span><span class="comment-nick">路过的评审</span></div>
+              <p class="comment-text">复筛看偏离度这事，作者们还是不太理解。精度高但直接画困困狗在太空飘的，复筛基本过不去，不是画得不好，是扣题太直。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">狗</span><span class="comment-nick">狗蛋设计</span></div>
+              <p class="comment-text">12 张里「周五下班」那张转发最多，其实画的时候最赶，半小时出图。有时候爆款真说不准。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">新</span><span class="comment-nick">新来的阿柴</span></div>
+              <p class="comment-text">刚入坑，想问下插画类的彩蛋一般埋几个才够？看狗子不睡那期数出来 11 个，我最多埋 3 个。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">白</span><span class="comment-nick">白开水不加冰</span></div>
+              <p class="comment-text">这狗的表情包我微信里存了三十多张，已经分不清哪张是官方的哪张是二创了。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">一</span><span class="comment-nick">一只小透明</span></div>
+              <p class="comment-text">11 月 5 日那个转发数据有点吓人，8 万次。不过想想我自己的群也确实转了，合理。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">老</span><span class="comment-nick">老猫烧须</span></div>
+              <p class="comment-text">二创授权简化之后周边类投稿多了不少，但评审细则还没跟上，实物类到底按什么标准打分，希望能早点出。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">周</span><span class="comment-nick">周一周二</span></div>
+              <p class="comment-text">今天太空漫游那期，有个作者把困困狗画成在太空站外面飘着睡觉，绳子都没系，看着又好气又好笑。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2>相关资讯 <span>10月下旬—11月上旬</span></h2>
+          </div>
+          <ul class="news-list">
+            <li>
+              <time class="news-date" datetime="2026-11-07">11月7日</time>
+              <div class="news-body">
+                <h4>第38期周榜揭晓，狗子不睡总分86分登顶</h4>
+                <p>本期周榜统计 11 月 1 日至 7 日数据，狗子不睡 5 次进入日榜前十，其中 2 次第一。阿柑 83 分第二，小黄狗 71 分第三。下期周榜将纳入 11 月 8 日「太空漫游」命题成绩。</p>
+              </div>
+            </li>
+            <li>
+              <time class="news-date" datetime="2026-11-06">11月6日</time>
+              <div class="news-body">
+                <h4>赛事页新增「定格动画」独立分类标签</h4>
+                <p>此前定格动画混在短视频类，导致该类作品在筛选时被大量 15 秒快剪淹没。新标签上线首日已有 28 件作品打标，运营方称后续会配套单独的评审参考标准。</p>
+              </div>
+            </li>
+            <li>
+              <time class="news-date" datetime="2026-11-05">11月5日</time>
+              <div class="news-body">
+                <h4>评审组微调11月评分权重，创意偏离度上调至35%</h4>
+                <p>完成度权重由 40% 降至 35%，精度维持 30%。评审组在公告中提及前两周有 7 件精度高但偏离命题的作品进入日榜前十，是本次调整的直接触发因素。</p>
+              </div>
+            </li>
+            <li>
+              <time class="news-date" datetime="2026-11-04">11月4日</time>
+              <div class="news-body">
+                <h4>「工位」命题日榜：三件键盘手办同场竞技</h4>
+                <p>捏捏星球的 1:12 微缩键盘以独立键帽 84 个的细节获日榜第五，另两件采用整块压模的作品分列第 12 和第 15。评审在评语里点名「键帽独立 sculpt」是拉开差距的关键。</p>
+              </div>
+            </li>
+            <li>
+              <time class="news-date" datetime="2026-11-03">11月3日</time>
+              <div class="news-body">
+                <h4>困困狗二创授权规则更新，50件以下走简化流程</h4>
+                <p>商用报备从「一律邮件申请」调整为「单次 50 件以下简化流程」，审核周期由 7—10 天缩短至 3 个工作日。个人非商用二创维持无需报备。规则更新后 5 天内周边实物类投稿增加 16 件。</p>
+              </div>
+            </li>
+            <li>
+              <time class="news-date" datetime="2026-10-28">10月28日</time>
+              <div class="news-body">
+                <h4>10月月榜公布：狗子不睡以总分214分拿下月冠</h4>
+                <p>10 月月榜统计 31 天数据，狗子不睡以 214 分排第一，阿柑 198 分第二，狗蛋设计 156 分第三。月榜前三名获得下月命题优先投票权，可各提名一个备选命题方向。</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="section" id="recommend">
+          <div class="section-header">
+            <h2>相关推荐 <span>具体方向与条目</span></h2>
+          </div>
+          <div class="recommend-tags">
+            <a href="/#featured">困困狗太空漫游第3集</a>
+            <a href="/#featured">便利店夜班收银台打盹</a>
+            <a href="/#featured">打工人困困表情包</a>
+            <a href="/#deep-dive">命题赛三轮筛选机制</a>
+            <a href="/#guide">黏土手办精度比较方法</a>
+            <a href="/#timeline">第38期周榜时间线</a>
+            <a href="/#news">二创授权简化流程</a>
+            <a href="/#featured">困困狗版猫和老鼠改图</a>
+          </div>
+        </section>
+
+        <!-- 补充板块：时间线 -->
+        <section class="section" id="timeline">
+          <div class="section-header">
+            <h2>赛事时间线 <span>11月1日—11月8日</span></h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <time datetime="2026-11-08">11月8日</time>
+              <h4>「太空漫游」命题发布</h4>
+              <p>07:00 公布命题，截至 18:00 已收 47 件作品，黏土定格类占比 34%。初筛 22:00 截止。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-07">11月7日</time>
+              <h4>第38期周榜公布</h4>
+              <p>狗子不睡 86 分登顶，阿柑 83 分第二。同日「便利店夜班」作品数突破 120 件。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-06">11月6日</time>
+              <h4>新分类标签上线 + 搬运投诉</h4>
+              <p>「定格动画」独立标签上线首日 28 件打标；小黄狗「地铁通勤」短视频被搬运至抖音，播放 14 万。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-05">11月5日</time>
+              <h4>评分权重调整 + 表情包爆发</h4>
+              <p>创意偏离度权重上调至 35%；「打工人困困」表情包单日转发破 8 万次，下载 3.2 万次。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-04">11月4日</time>
+              <h4>「工位」命题日榜</h4>
+              <p>三件键盘手办同场竞技，捏捏星球以 84 个独立键帽获日榜第五。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-03">11月3日</time>
+              <h4>二创授权规则更新</h4>
+              <p>50 件以下走简化流程，审核周期缩至 3 个工作日，周边实物投稿 5 天内增加 16 件。</p>
+            </div>
+            <div class="timeline-item">
+              <time datetime="2026-11-01">11月1日</time>
+              <h4>11月赛季开启</h4>
+              <p>新赛季首日命题「闹钟」，当日收 89 件作品，创单日投稿量第二高纪录。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 投稿互动 -->
+        <section class="section" id="submit">
+          <div class="submit-panel">
+            <div class="submit-text">
+              <h3>投稿你的困困狗作品</h3>
+              <p>每日命题赛 07:00 公布、23:59 截止，支持插画 / 短视频 / 黏土 / 定格 / 表情包五种形态。<br>上传作品图或视频链接，附 40—80 字创作说明即可参赛。</p>
+            </div>
+            <button class="btn-primary" type="button" onclick="alert('投稿入口为示例交互，正式参赛请以赛事页公告为准。')">我要投稿 →</button>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 右辅助栏 -->
+      <aside class="side-panel" aria-label="辅助信息">
+        <div class="side-card">
+          <h3>今日热榜</h3>
+          <ol class="hot-list">
+            <li><span class="hot-rank">1</span><a href="/#featured">困困狗太空漫游第3集</a></li>
+            <li><span class="hot-rank">2</span><a href="/#featured">打工人困困表情包</a></li>
+            <li><span class="hot-rank">3</span><a href="/#featured">便利店夜班收银台打盹</a></li>
+            <li><span class="hot-rank">4</span><a href="/#featured">困困狗挤地铁15秒循环</a></li>
+            <li><span class="hot-rank">5</span><a href="/#featured">困困狗睡在键盘上</a></li>
+            <li><span class="hot-rank">6</span><a href="/#featured">困困狗版猫和老鼠改图</a></li>
+          </ol>
+        </div>
+        <div class="side-card">
+          <h3>最新更新</h3>
+          <ul class="update-feed">
+            <li>「太空漫游」已收 47 件作品<time datetime="2026-11-08">11月8日 18:00</time></li>
+            <li>阿柑发布第3集制作花絮<time datetime="2026-11-08">11月8日 14:20</time></li>
+            <li>第38期周榜狗子不睡登顶<time datetime="2026-11-07">11月7日 20:00</time></li>
+            <li>「便利店夜班」作品破120件<time datetime="2026-11-07">11月7日 11:30</time></li>
+            <li>定格动画独立标签上线<time datetime="2026-11-06">11月6日 09:00</time></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>常用入口</h3>
+          <ul class="hot-list">
+            <li><a href="/#submit">投稿参赛</a></li>
+            <li><a href="/#categories">分类浏览</a></li>
+            <li><a href="/#faq">赛制问答</a></li>
+            <li><a href="/#news">赛事公告</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">51每日大赛困困狗</span>
+      <p>困困狗主题创作聚合页，覆盖 2024 年 12 月至今的每日命题赛作品存档、周榜月榜记录与二创授权公告。条目类型含插画、短视频、黏土手办、定格动画、表情包与周边实物，工作日每天 07:00 更新命题，23:59 截止当日投稿。</p>
+    </div>
+    <div class="footer-col">
+      <h4>作品分类</h4>
+      <a href="/#featured">场景插画</a>
+      <a href="/#featured">15秒短视频</a>
+      <a href="/#featured">黏土手办</a>
+      <a href="/#featured">定格动画</a>
+      <a href="/#featured">表情包改图</a>
+    </div>
+    <div class="footer-col">
+      <h4>赛事信息</h4>
+      <a href="/#overview">赛事概览</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#timeline">赛事时间线</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#faq">常见问题</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <a href="/#submit">投稿参赛</a>
+      <a href="/#comments">网友评论</a>
+      <a href="/#guide">浏览指南</a>
+      <a href="/#recommend">相关推荐</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>示例数据页面 · 内容条目均为垂类特征展示</span>
+    <span>页面更新于 2026 年 11 月 8 日 · 对应公告条与「最新更新」板块</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  // 移动端菜单
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('mobileOverlay');
+
+  function openMenu(){
+    mainNav.classList.add('open');
+    overlay.classList.add('active');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','关闭菜单');
+  }
+  function closeMenu(){
+    mainNav.classList.remove('open');
+    overlay.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','打开菜单');
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('open')) closeMenu(); else openMenu();
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('open')) closeMenu();
+  });
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.innerWidth <= 740) closeMenu();
+    });
+  });
+
+  // 回到顶部
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight * 0.8) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
+  }, {passive:true});
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 搜索筛选（针对精选卡片）
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var featuredGrid = document.getElementById('featuredGrid');
+
+  function doSearch(){
+    var q = searchInput.value.trim().toLowerCase();
+    var cards = featuredGrid.querySelectorAll('.content-card');
+    var found = 0;
+    cards.forEach(function(card){
+      var text = (card.getAttribute('data-searchable') || '') + ' ' + card.textContent.toLowerCase();
+      if(!q || text.indexOf(q) !== -1){ card.style.display = ''; found++; }
+      else { card.style.display = 'none'; }
+    });
+    var noRes = featuredGrid.querySelector('.no-result');
+    if(noRes) noRes.remove();
+    if(found === 0 && q){
+      var msg = document.createElement('p');
+      msg.className = 'no-result';
+      msg.style.cssText = 'grid-column:1/-1;text-align:center;color:#8a8a8a;font-size:14px;padding:24px 0;';
+      msg.textContent = '没有找到与「' + searchInput.value.trim() + '」匹配的作品，换个关键词试试。';
+      featuredGrid.appendChild(msg);
+    }
+  }
+  if(searchInput){
+    searchInput.addEventListener('input', doSearch);
+    searchBtn.addEventListener('click', doSearch);
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  // 频道索引高亮
+  var channelLinks = document.querySelectorAll('.channel-index a');
+  var sections = [];
+  channelLinks.forEach(function(link){
+    var id = link.getAttribute('href').replace('/#','');
+    var sec = document.getElementById(id);
+    if(sec) sections.push({el:sec, link:link});
+  });
+  window.addEventListener('scroll', function(){
+    var scrollPos = window.scrollY + 120;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= scrollPos) current = s;
+    });
+    channelLinks.forEach(function(l){ l.classList.remove('active'); });
+    if(current) current.link.classList.add('active');
+  }, {passive:true});
+})();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"51每日大赛困困狗",
+  "description":"困困狗主题每日创意作品聚合页，涵盖插画、短视频、黏土手办、定格动画与表情包二创。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"困困狗每日大赛的命题几点公布？",
+      "acceptedAnswer":{"@type":"Answer","text":"每天早上7:00在赛事页顶部更新当日命题词，同时公告条同步推送。提交窗口从命题公布开始，到当天23:59截止，合计约17小时。"}
+    },
+    {
+      "@type":"Question",
+      "name":"黏土手办类作品为什么在日榜前十占比不高？",
+      "acceptedAnswer":{"@type":"Answer","text":"制作耗时是主因。黏土手办平均12—20小时，定格动画超过30小时，而每日命题只给17小时窗口，大部分作者来不及完成。"}
+    },
+    {
+      "@type":"Question",
+      "name":"困困狗二创商用怎么报备？",
+      "acceptedAnswer":{"@type":"Answer","text":"11月3日更新后的规则是：单次贩售50件以下走简化流程，提交作品图、贩售数量和渠道说明，审核周期3个工作日；超过50件需邮件申请，审核周期7—10天。个人非商用二创无需报备。"}
+    },
+    {
+      "@type":"Question",
+      "name":"「便利店夜班」命题为什么被评审说同质化？",
+      "acceptedAnswer":{"@type":"Answer","text":"该命题累计123件作品里，41件含熬夜或打盹元素，其中至少14件采用「困困狗趴在收银台睡着」的构图。评审组在内部纪要里提到这个数字，认为视角扎堆。"}
+    },
+    {
+      "@type":"Question",
+      "name":"周榜积分怎么算？",
+      "acceptedAnswer":{"@type":"Answer","text":"每日前10名按名次给分，第1名12分，第2名10分，第3名8分，第4—6名各5分，第7—10名各3分。一周累计后取总分排周榜。"}
+    },
+    {
+      "@type":"Question",
+      "name":"表情包改图用了困困狗原图，需要标注出处吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"需要。赛事规则要求二创作品在发布时标注原图作者或「困困狗官方形象」字样，未标注的作品在初筛阶段会被要求补充。"}
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
