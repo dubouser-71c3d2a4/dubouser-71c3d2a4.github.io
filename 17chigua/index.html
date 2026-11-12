@@ -1,0 +1,2378 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17吃瓜 - 娱乐热剧综艺动态聚合</title>
+  <meta name="description" content="17吃瓜聚合近期热剧、综艺、音乐与影视讨论，包含《烈焰之下》角色争议、综艺《出发吧朋友》录制进度、专辑销量对比与片场路透等条目，适合关注娱乐动态的观众浏览。">
+  <meta name="keywords" content="17吃瓜">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23e67e22'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'%3E17%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #d35400;
+      --primary-light: #f39c12;
+      --primary-dark: #a04000;
+      --bg: #fdf6f0;
+      --panel: #ffffff;
+      --text-primary: #2c2c2c;
+      --text-secondary: #6b6b6b;
+      --text-muted: #9e9e9e;
+      --border: #e8ddd4;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --radius-banner: 16px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+      --announce-height: 40px;
+      --header-height: 64px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-height);
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 13px;
+      gap: 16px;
+      overflow: hidden;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .announce-items {
+      display: flex;
+      gap: 28px;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+      font-size: 12.5px;
+      opacity: 0.95;
+    }
+
+    .announce-items span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .announce-dot {
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 24px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar { display: none; }
+
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: #fef0e6;
+      color: var(--primary);
+    }
+
+    .main-nav a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f5ece5;
+      border-radius: 20px;
+      padding: 4px 14px;
+      border: 1px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--primary-light);
+    }
+
+    .search-box input {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 13px;
+      width: 140px;
+      color: var(--text-primary);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box button {
+      color: var(--primary);
+      font-size: 15px;
+      padding: 0 0 0 6px;
+      line-height: 1;
+    }
+
+    .hamburger {
+      display: none;
+      width: 36px;
+      height: 36px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .hamburger:hover { background: #f5ece5; }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* 移动端遮罩 */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 98;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .nav-overlay.show {
+      display: block;
+      opacity: 1;
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fff5eb 0%, #fde2cc 40%, #fce4d6 100%);
+      padding: 48px 24px 56px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(243,156,18,0.12), transparent 70%);
+      top: -200px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(211,84,0,0.08), transparent 70%);
+      bottom: -150px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 28px;
+      line-height: 1.8;
+    }
+
+    .hero-entries {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      border: 1.5px solid var(--primary);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #fef0e6;
+      transform: translateY(-2px);
+    }
+
+    /* 主布局 */
+    .page-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      display: grid;
+      grid-template-columns: 180px 1fr 250px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+    }
+
+    .channel-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+
+    .channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .channel-list a:hover,
+    .channel-list a:focus-visible {
+      background: #fef0e6;
+      color: var(--primary);
+    }
+
+    .channel-list a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    .channel-list a.active {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 44px;
+      scroll-margin-top: var(--sticky-offset);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+    }
+
+    .section-header .section-more {
+      font-size: 13px;
+      color: var(--primary);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .section-header .section-more:hover {
+      text-decoration: underline;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-default);
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+
+    .overview-text p + p {
+      margin-top: 12px;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f0e6de;
+      position: relative;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-type {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 10px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: #fef0e6;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-meta .heat {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .update-item:last-child { border-bottom: none; }
+
+    .update-item:hover { background: #fdf8f4; }
+
+    .update-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 48px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .update-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .update-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .category-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .category-count {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* 深度解析 */
+    .deep-analysis {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .deep-analysis h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      color: var(--primary-dark);
+    }
+
+    .deep-analysis h3:first-child { margin-top: 0; }
+
+    .deep-analysis p {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 10px;
+    }
+
+    .deep-analysis ul {
+      margin: 10px 0 14px;
+      padding-left: 4px;
+    }
+
+    .deep-analysis li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      padding: 4px 0 4px 18px;
+      position: relative;
+    }
+
+    .deep-analysis li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .compare-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0;
+    }
+
+    .compare-cell {
+      background: #fdf8f4;
+      border-radius: 8px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+
+    .compare-cell strong {
+      display: block;
+      font-size: 13px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .compare-cell span {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-default);
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary:hover { background: #fdf8f4; }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 300;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: -2px;
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .news-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s;
+    }
+
+    .news-item:hover { box-shadow: var(--shadow-hover); }
+
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .news-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .news-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 相关推荐标签 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-size: 13px;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-default);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .rec-tag:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .rec-tag .rec-count {
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 热门榜单 */
+    .ranking-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .rank-item:last-child { border-bottom: none; }
+    .rank-item:hover { background: #fdf8f4; }
+
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      background: #f5ece5;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .rank-num.top1 { background: #ff6b35; color: #fff; }
+    .rank-num.top2 { background: #ff9f43; color: #fff; }
+    .rank-num.top3 { background: #feca57; color: #7a4a00; }
+
+    .rank-name {
+      font-size: 14px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .rank-score {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 右侧辅助栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .sidebar-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+
+    .sidebar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .sidebar-list li .idx {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: #f5ece5;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-list li .idx.hot {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .sidebar-list li a {
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .sidebar-list li a:hover { color: var(--primary); }
+
+    .sidebar-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sidebar-tag-cloud span {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: var(--radius-tag);
+      background: #fdf8f4;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      cursor: default;
+      transition: border-color 0.2s;
+    }
+
+    .sidebar-tag-cloud span:hover {
+      border-color: var(--primary-light);
+    }
+
+    /* 投稿互动模块 */
+    .submit-module {
+      background: linear-gradient(135deg, #fff5eb, #fde2cc);
+      border-radius: var(--radius-banner);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-default);
+    }
+
+    .submit-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .submit-text {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .submit-text h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+    }
+
+    .submit-text p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2c2c2c;
+      color: #b0b0b0;
+      padding: 40px 24px 28px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-brand .brand-logo {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #999;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ddd;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col a {
+      font-size: 12.5px;
+      color: #999;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--primary-light); }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 16px rgba(211,84,0,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+      z-index: 90;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* 搜索无结果提示 */
+    .no-result {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .no-result.show { display: block; }
+
+    .hidden { display: none !important; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .page-container {
+        grid-template-columns: 1fr 240px;
+        gap: 24px;
+      }
+
+      .channel-sidebar {
+        display: none;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .right-sidebar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .page-container {
+        grid-template-columns: 1fr;
+        padding: 20px 12px;
+      }
+
+      .right-sidebar {
+        position: static;
+        display: flex;
+      }
+
+      .main-nav {
+        display: none;
+        position: fixed;
+        top: calc(var(--announce-height) + var(--header-height));
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 12px 16px;
+        gap: 2px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 97;
+        max-height: calc(100vh - var(--sticky-offset));
+        overflow-y: auto;
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a {
+        padding: 12px 14px;
+        font-size: 15px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .search-box input {
+        width: 100px;
+      }
+
+      .hero {
+        padding: 36px 16px 40px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero-desc {
+        font-size: 14px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .compare-box {
+        grid-template-columns: 1fr;
+      }
+
+      .deep-analysis {
+        padding: 20px 18px;
+      }
+
+      .update-item {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .update-summary {
+        white-space: normal;
+        flex-basis: 100%;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .announce-items {
+        gap: 16px;
+        font-size: 11.5px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .submit-module {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* 可见焦点 */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner" aria-label="更新公告">
+    <span class="announce-brand">17吃瓜</span>
+    <div class="announce-items">
+      <span><span class="announce-dot"></span>11月7日 《烈焰之下》第18集上线</span>
+      <span><span class="announce-dot"></span>11月6日 《出发吧朋友》三亚站路透</span>
+      <span><span class="announce-dot"></span>11月5日 林昭专辑《溯游》销量破80万</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <a href="/" class="brand-logo" aria-label="17吃瓜首页">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="#d35400"/>
+        <text x="16" y="21" font-size="14" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="bold">17</text>
+      </svg>
+      17吃瓜
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#hot-series">热播剧集</a>
+      <a href="/#variety">综艺现场</a>
+      <a href="/#music">音乐动态</a>
+      <a href="/#film">影视速递</a>
+      <a href="/#idol">偶像观察</a>
+      <a href="/#ranking">热度榜单</a>
+      <a href="/#comments">瓜友评论</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜索条目..." aria-label="搜索条目">
+        <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>17吃瓜</h1>
+      <p class="hero-desc">汇集热播剧集角色走向、综艺录制路透、音乐专辑销量与片场动态。从《烈焰之下》的剧情分歧到《出发吧朋友》的嘉宾互动，每天更新可追的具体条目。</p>
+      <div class="hero-entries">
+        <a href="/#hot-series" class="btn-primary">看热剧动态 →</a>
+        <a href="/#variety" class="btn-outline">综艺路透</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主布局 -->
+  <div class="page-container">
+
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道索引">
+      <div class="channel-title">频道索引</div>
+      <nav class="channel-list">
+        <a href="/#hot-series" class="active">热播剧集</a>
+        <a href="/#variety">综艺现场</a>
+        <a href="/#music">音乐动态</a>
+        <a href="/#film">影视速递</a>
+        <a href="/#idol">偶像观察</a>
+        <a href="/#ranking">热度榜单</a>
+        <a href="/#comments">瓜友评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+      </nav>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content">
+
+      <!-- 主题领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2>娱乐内容风向速览</h2>
+        </div>
+        <div class="overview-text">
+          <p>近期剧集市场由《烈焰之下》和《雾港》两部悬疑剧带动讨论。前者在11月7日播出的第18集中，林昭饰演的程野身份暴露，单集弹幕量在腾讯视频站内突破42万条。后者走慢热路线，豆瓣开分8.1，但更新节奏被部分观众吐槽“一周三集太慢”。</p>
+          <p>综艺方面，《出发吧朋友》三亚站录制在11月6日流出多段路透，常驻嘉宾赵一鸣与飞行嘉宾周雨桐在沙滩任务中的互动被剪成短视频，抖音单条点赞超90万。音综《夏日回声》则因赛制调整——现场观众投票权重从30%提高到50%——在微博引发争议。</p>
+          <p>音乐板块，林昭的专辑《溯游》截至11月5日销量报80.6万张，其中数字专辑占比72%。同期发片的陈屿《逆光飞行》销量41.3万张，两者在QQ音乐畅销榜上交替领先。偶像团体方面，限定团“星辰少年”11月8日发布告别演唱会预告，五站巡演城市已公布三站。</p>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="section" id="hot-series">
+        <div class="section-header">
+          <h2>热播剧集与综艺精选</h2>
+          <a href="/#ranking" class="section-more">热度榜单 →</a>
+        </div>
+        <div class="card-grid" id="cardGrid">
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/lieyan1/400/300" alt="《烈焰之下》程野身份暴露剧照" width="400" height="300" loading="lazy">
+              <span class="card-type">悬疑剧</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">烈焰之下</h3>
+              <p class="card-desc">第18集程野卧底身份被孟队识破，审讯室对峙戏单集弹幕42万条。林昭与王砚辉的对手戏被剪成多个版本传播。</p>
+              <div class="card-tags">
+                <span class="tag">林昭</span>
+                <span class="tag">卧底题材</span>
+                <span class="tag">腾讯视频</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 9.4</span>
+                <span>更新至18集</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/wugang2/400/300" alt="《雾港》码头追凶场景" width="400" height="300" loading="lazy">
+              <span class="card-type">悬疑剧</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">雾港</h3>
+              <p class="card-desc">豆瓣开分8.1，以码头凶案串联三个家庭。第6集长镜头追凶片段在B站被逐帧分析，播放量破200万。</p>
+              <div class="card-tags">
+                <span class="tag">慢热悬疑</span>
+                <span class="tag">豆瓣8.1</span>
+                <span class="tag">爱奇艺</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 8.7</span>
+                <span>更新至第6集</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/chufa3/400/300" alt="《出发吧朋友》三亚沙滩录制现场" width="400" height="300" loading="lazy">
+              <span class="card-type">户外综艺</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">出发吧朋友</h3>
+              <p class="card-desc">三亚站11月6日录制，赵一鸣与周雨桐沙滩任务路透抖音点赞90万。节目组临时加设“交换队友”环节引发猜测。</p>
+              <div class="card-tags">
+                <span class="tag">赵一鸣</span>
+                <span class="tag">周雨桐</span>
+                <span class="tag">浙江卫视</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 9.1</span>
+                <span>11月6日路透</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/xiari4/400/300" alt="《夏日回声》舞台竞演现场" width="400" height="300" loading="lazy">
+              <span class="card-type">音乐综艺</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">夏日回声</h3>
+              <p class="card-desc">赛制调整：现场观众投票权重从30%提至50%。第8期淘汰环节，导师陈立农弃权投票登上微博热搜第7位。</p>
+              <div class="card-tags">
+                <span class="tag">赛制争议</span>
+                <span class="tag">陈立农</span>
+                <span class="tag">芒果TV</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 8.5</span>
+                <span>每周五更新</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/suyou5/400/300" alt="林昭《溯游》专辑封面视觉" width="400" height="300" loading="lazy">
+              <span class="card-type">音乐专辑</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">林昭《溯游》</h3>
+              <p class="card-desc">11月5日销量破80.6万张，数字专辑占72%。同名主打歌MV在B站播放量680万，弹幕集中在“第二段副歌变调”。</p>
+              <div class="card-tags">
+                <span class="tag">数字专辑</span>
+                <span class="tag">QQ音乐</span>
+                <span class="tag">销量80万+</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 9.0</span>
+                <span>11月5日数据</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">
+              <img src="https://picsum.photos/seed/xingchen6/400/300" alt="星辰少年告别演唱会预告画面" width="400" height="300" loading="lazy">
+              <span class="card-type">偶像团体</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">星辰少年告别演唱会</h3>
+              <p class="card-desc">限定团11月8日发布告别演唱会预告，五站巡演公布北京、上海、成都三站。成员刘星宇在直播中透露“有未公开曲目”。</p>
+              <div class="card-tags">
+                <span class="tag">限定团</span>
+                <span class="tag">巡演</span>
+                <span class="tag">刘星宇</span>
+              </div>
+              <div class="card-meta">
+                <span class="heat">热度 8.8</span>
+                <span>11月8日预告</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div class="no-result" id="noResult">没有找到匹配的条目，换一个关键词试试。</div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="variety">
+        <div class="section-header">
+          <h2>最新更新与动态</h2>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-date">11-07</span>
+            <span class="update-name">烈焰之下</span>
+            <span class="update-summary">第18集上线，程野身份暴露，单集弹幕42万条</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-07</span>
+            <span class="update-name">雾港</span>
+            <span class="update-summary">第6集长镜头追凶片段B站播放量破200万</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-06</span>
+            <span class="update-name">出发吧朋友</span>
+            <span class="update-summary">三亚站录制路透，赵一鸣与周雨桐沙滩任务互动</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-06</span>
+            <span class="update-name">夏日回声</span>
+            <span class="update-summary">第8期淘汰环节，导师陈立农弃权投票登热搜</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-05</span>
+            <span class="update-name">林昭《溯游》</span>
+            <span class="update-summary">销量报80.6万张，数字专辑占比72%</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-05</span>
+            <span class="update-name">陈屿《逆光飞行》</span>
+            <span class="update-summary">销量41.3万张，与《溯游》在QQ音乐畅销榜交替领先</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-04</span>
+            <span class="update-name">星辰少年</span>
+            <span class="update-summary">刘星宇直播透露告别演唱会有未公开曲目</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-04</span>
+            <span class="update-name">烈焰之下</span>
+            <span class="update-summary">林昭专访回应角色争议：“程野的选择在15集已有伏笔”</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-03</span>
+            <span class="update-name">雾港</span>
+            <span class="update-summary">豆瓣评分稳定8.1，更新节奏被部分观众吐槽“周更太慢”</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11-02</span>
+            <span class="update-name">出发吧朋友</span>
+            <span class="update-summary">节目组官宣下一站丽江，飞行嘉宾名单未公布</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="film">
+        <div class="section-header">
+          <h2>分类入口</h2>
+        </div>
+        <div class="category-grid">
+          <a href="/#hot-series" class="category-item">
+            <span class="category-icon">🎬</span>
+            <span class="category-name">悬疑剧集</span>
+            <span class="category-count">12部在更</span>
+          </a>
+          <a href="/#variety" class="category-item">
+            <span class="category-icon">📺</span>
+            <span class="category-name">户外综艺</span>
+            <span class="category-count">8档热播</span>
+          </a>
+          <a href="/#music" class="category-item">
+            <span class="category-icon">🎵</span>
+            <span class="category-name">数字专辑</span>
+            <span class="category-count">6张破50万</span>
+          </a>
+          <a href="/#film" class="category-item">
+            <span class="category-icon">🎥</span>
+            <span class="category-name">影视速递</span>
+            <span class="category-count">4部待映</span>
+          </a>
+          <a href="/#idol" class="category-item">
+            <span class="category-icon">⭐</span>
+            <span class="category-name">偶像团体</span>
+            <span class="category-count">3团动态</span>
+          </a>
+          <a href="/#ranking" class="category-item">
+            <span class="category-icon">🔥</span>
+            <span class="category-name">热度榜单</span>
+            <span class="category-count">每日更新</span>
+          </a>
+          <a href="/#news" class="category-item">
+            <span class="category-icon">📰</span>
+            <span class="category-name">相关资讯</span>
+            <span class="category-count">6条新讯</span>
+          </a>
+          <a href="/#comments" class="category-item">
+            <span class="category-icon">💬</span>
+            <span class="category-name">瓜友评论</span>
+            <span class="category-count">16条热评</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section" id="analysis">
+        <div class="section-header">
+          <h2>深度解析：悬疑剧与音综的观众分歧</h2>
+        </div>
+        <div class="deep-analysis">
+          <h3>悬疑剧的“节奏”争论：数据背后的两种观看习惯</h3>
+          <p>《烈焰之下》和《雾港》同属悬疑类型，但观众反馈呈现明显差异。前者单集弹幕42万条，后者豆瓣评分8.1。弹幕量高不代表满意度高——烈焰之下第18集播出后，微博话题“程野卧底身份曝光”阅读量2.1亿，但评论区高频词包括“太突然”“前面没铺垫”。</p>
+          <p>把两条数据放在一起看：烈焰之下第15集到第17集分别出现程野与孟队的三次单独对话，每次时长不超过90秒。这是编剧铺的伏笔，但单集信息密度大，观众容易漏看。雾港的慢节奏反而让观众有时间在豆瓣逐集讨论，第6集长镜头追凶片段被B站UP主逐帧分析，播放量200万。</p>
+          <div class="compare-box">
+            <div class="compare-cell">
+              <strong>烈焰之下：高密度快节奏</strong>
+              <span>单集弹幕42万，话题阅读2.1亿。争议点：伏笔分散在15-17集，单集90秒对话容易被忽略。</span>
+            </div>
+            <div class="compare-cell">
+              <strong>雾港：慢热长镜头</strong>
+              <span>豆瓣8.1，第6集长镜头B站播放200万。争议点：一周三集更新，部分观众认为“等不起”。</span>
+            </div>
+          </div>
+
+          <h3>音综赛制调整：观众投票权重从30%到50%改变了什么</h3>
+          <p>《夏日回声》第8期将现场观众投票权重从30%提高到50%。这个变化直接影响淘汰结果：第8期被淘汰的选手孙晓在导师投票环节获得陈立农、张亚东两票，但现场观众投票仅排第6。陈立农现场弃权投票，微博话题“陈立农弃权”当晚登上热搜第7位，阅读量1.4亿。</p>
+          <p>对比调整前后两期数据：第7期导师投票权重70%时，淘汰选手李梦然导师票排第3、观众票排第5；第8期孙晓导师票排第2、观众票排第6。两期淘汰选手的导师票与观众票排名差均为2位，说明权重调整没有改变“导师认可但观众票低”的结构性问题。争议焦点不在权重比例，而在现场观众样本量——每期现场观众500人，抽取方式未公开。</p>
+
+          <h3>数字专辑销量对比：80.6万与41.3万的差距在哪</h3>
+          <p>林昭《溯游》80.6万张，陈屿《逆光飞行》41.3万张。差距不是粉丝基数——两人微博粉丝分别为3200万和2800万，比例接近。拆开销售结构：溯游数字专辑占比72%，实体专辑预售占28%；逆光飞行数字专辑占比91%，实体仅占9%。林昭的实体专辑在11月1日预售时附赠签名海报，首批2万张在12分钟内售罄。陈屿实体专辑没有签名版本，预售周期也短了4天。</p>
+          <p>另一个变量是主打歌传播：溯游同名主打歌MV在B站播放680万，弹幕集中在“第二段副歌变调”；逆光飞行主打歌MV播放210万，评论多集中在歌词。MV播放量差异与B站用户对“变调”这类制作细节的偏好有关，不能直接等同于歌曲质量。</p>
+
+          <h3>路透传播链：从三亚沙滩到热搜的四个环节</h3>
+          <p>11月6日《出发吧朋友》三亚站路透的传播路径可以拆成四步：现场游客手机拍摄→抖音账号“三亚阿杰”首发→娱乐博主“瓜田速递”转发并配文→赵一鸣粉丝团官微发布精修图。每一步都有具体时间：首发视频在6日14:23上传，转发在15:07，粉丝团精修图在16:40。抖音单条点赞90万中，首发视频占62万，转发视频占28万。</p>
+          <p>这个链条里，信息在第二步就开始变形：首发视频只拍了赵一鸣和周雨桐在沙滩上跑，转发文案加了“交换队友”的猜测。节目组在6日20:15通过官方微博回应“录制流程以播出为准”，没有否认“交换队友”环节存在，但也没确认。网友推测的“周雨桐常驻”没有官方来源，目前只有粉丝团一句“期待后续”。</p>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2>体验指南：怎么判断一条瓜值不值得追</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>先看条目有没有具体时间、地点、当事人</h4>
+              <p>“某综艺录制现场混乱”这种没有时间地点人物的描述，信息量为零。有具体日期（11月6日）、地点（三亚）、当事人（赵一鸣、周雨桐）的条目，才有追下去的价值。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>区分“首发”和“转发”：看信息在哪个环节被加了猜测</h4>
+              <p>三亚路透首发视频只拍了沙滩奔跑，转发文案加了“交换队友”。找到首发来源（抖音“三亚阿杰”），对比转发版本，能看清哪部分是原始画面、哪部分是后来添加的推测。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>剧集类条目：先看集数和弹幕/评分分布，再看争议点</h4>
+              <p>《烈焰之下》第18集弹幕42万条，但争议集中在15-17集的伏笔铺陈。单看第18集容易觉得“突兀”，补看前三集才能判断是编剧问题还是观看节奏问题。雾港豆瓣8.1，评分从第4集开始稳定，前三集评分人数不足。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>音乐销量对比：拆开数字专辑和实体专辑看</h4>
+              <p>林昭《溯游》80.6万张里数字专辑占72%，实体预售有签名海报加持。陈屿《逆光飞行》41.3万张里数字占91%，实体没有签名版本。只看总销量会忽略销售结构差异，拆开看才能判断粉丝购买力和路人盘的比例。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>综艺赛制争议：找规则原文和样本量</h4>
+              <p>《夏日回声》投票权重从30%调到50%，争议不在比例，在现场观众样本量（500人）和抽取方式未公开。追这类瓜先找节目组发布的规则原文，再看样本量是否合理，比看热搜评论有效。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>常见问答</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>《烈焰之下》程野的身份是从哪一集开始铺垫的？</summary>
+            <div class="faq-answer">第15集到第17集，程野与孟队有三次单独对话，每次不超过90秒。第15集孟队问“你老家在哪”，程野回答时停顿了2秒；第16集孟队递给程野一份档案，镜头给了档案袋上的编号特写；第17集程野在走廊遇到孟队时下意识摸了一下后腰。第18集身份暴露时，这三处细节被弹幕逐条翻出来。</div>
+          </details>
+          <details class="faq-item">
+            <summary>《雾港》为什么一周只更新三集？</summary>
+            <div class="faq-answer">爱奇艺的排播策略是每周三、五、六各更新一集，共12集。导演在10月28日的看片会上提到，后期制作周期比预期长了三周，码头场景的调色和长镜头剪辑耗时较多。第6集那个长镜头追凶片段，单是稳定器调试就花了两天。</div>
+          </details>
+          <details class="faq-item">
+            <summary>《夏日回声》现场观众投票的500人是怎么选的？</summary>
+            <div class="faq-answer">节目组没有公开具体抽取方式。已知信息：每期录制前三天在官方小程序开放报名，报名者需填写年龄、职业和对往期节目的评价。第8期录制现场有观众在社交平台提到“报名时选了‘经常看音综’”，但节目组未回应该选项是否影响入选概率。</div>
+          </details>
+          <details class="faq-item">
+            <summary>林昭《溯游》实体专辑和数字专辑有什么区别？</summary>
+            <div class="faq-answer">数字专辑在QQ音乐购买后可在线收听全部10首歌，实体专辑包含CD、歌词本和一张随机签名海报（首批2万张带签名）。实体专辑预售在11月1日开启，12分钟内首批售罄；数字专辑从10月20日上线，截至11月5日售出约58万张，占总量80.6万的72%。</div>
+          </details>
+          <details class="faq-item">
+            <summary>星辰少年告别演唱会已经公布了哪些城市？</summary>
+            <div class="faq-answer">11月8日发布的预告中公布了北京、上海、成都三站，五站巡演还剩两站未公布。北京站时间定在12月20日，场馆是凯迪拉克中心；上海站12月27日，梅赛德斯-奔驰文化中心；成都站2027年1月10日，凤凰山体育公园。刘星宇在11月4日直播中提到“有未公开曲目”，但没透露歌名。</div>
+          </details>
+          <details class="faq-item">
+            <summary>《出发吧朋友》三亚站路透里赵一鸣和周雨桐在做什么任务？</summary>
+            <div class="faq-answer">11月6日14:23抖音账号“三亚阿杰”首发的视频显示，两人在沙滩上分头跑向不同颜色的旗子，周雨桐先到，赵一鸣落后约3秒。转发文案里写的“交换队友”环节在视频中没有出现，节目组6日20:15的回应只说了“录制流程以播出为准”，没有确认这个环节是否存在。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2>瓜友评论</h2>
+        </div>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">追</div>
+              <span class="comment-name">追剧小陈</span>
+              <span class="comment-time">11-07 22:14</span>
+            </div>
+            <p class="comment-text">烈焰之下18集看完直接倒回去翻15集，孟队问老家那段程野确实顿了一下。编剧埋得够深，但一周等三集真的容易忘。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">海</div>
+              <span class="comment-name">海边卡夫卡</span>
+              <span class="comment-time">11-07 21:50</span>
+            </div>
+            <p class="comment-text">雾港第6集那个长镜头我看了三遍，码头追到巷子里那段跟着跑的镜头，稳定器调了两天我信。但一周三集太磨人了。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">路</div>
+              <span class="comment-name">路透社不社</span>
+              <span class="comment-time">11-06 18:32</span>
+            </div>
+            <p class="comment-text">三亚那个路透首发视频就只是跑步，转发直接加“交换队友”，这添加速度比节目组剪辑还快。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">音</div>
+              <span class="comment-name">音综老观众</span>
+              <span class="comment-time">11-06 20:05</span>
+            </div>
+            <p class="comment-text">夏日回声赛制改来改去，现场观众500人怎么选的又不公开，陈立农弃权那下我理解，导师票和观众票排名差2位这结构性问题不是调权重能解决的。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">林</div>
+              <span class="comment-name">林昭的耳机</span>
+              <span class="comment-time">11-05 23:17</span>
+            </div>
+            <p class="comment-text">溯游实体专辑的签名海报首批2万张12分钟没了，我卡在付款页面转圈。数字专辑先听着，副歌变调那段确实上头。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">陈</div>
+              <span class="comment-name">陈屿的吉他</span>
+              <span class="comment-time">11-05 22:40</span>
+            </div>
+            <p class="comment-text">逆光飞行实体没签名版本，预售周期还比溯游短4天，销量差一半不奇怪。但歌本身不差，MV评论都在聊歌词没人聊编曲，有点可惜。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">星</div>
+              <span class="comment-name">星辰大海啊</span>
+              <span class="comment-time">11-04 21:08</span>
+            </div>
+            <p class="comment-text">刘星宇直播说有别公开曲目，结果就一句带过，吊胃口。北京站12月20日凯迪拉克中心，票务信息什么时候出？</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">编</div>
+              <span class="comment-name">编剧别刀我</span>
+              <span class="comment-time">11-04 19:33</span>
+            </div>
+            <p class="comment-text">程野摸后腰那个细节我当时以为腰疼，现在回头看全是伏笔。但18集审讯室对峙节奏太快了，王砚辉台词还没说完镜头就切了。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">豆</div>
+              <span class="comment-name">豆瓣潜水员</span>
+              <span class="comment-time">11-03 15:21</span>
+            </div>
+            <p class="comment-text">雾港豆瓣8.1我觉得偏高，前三集评分人数不到5000，第4集之后才多起来。长镜头是加分项，但凶手动机那条线第5集才展开，前面靠氛围撑。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">今</div>
+              <span class="comment-name">今天也在吃瓜</span>
+              <span class="comment-time">11-03 11:47</span>
+            </div>
+            <p class="comment-text">赵一鸣跑慢了3秒就被剪成“放水”，粉丝精修图还挑了个他笑的瞬间，这滤镜厚度可以。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">冷</div>
+              <span class="comment-name">冷静吃瓜人</span>
+              <span class="comment-time">11-02 22:15</span>
+            </div>
+            <p class="comment-text">节目组说“以播出为准”基本就是既不承认也不否认。等正片吧，现在吵来吵去没意思。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">上</div>
+              <span class="comment-name">上班摸鱼侠</span>
+              <span class="comment-time">11-02 14:30</span>
+            </div>
+            <p class="comment-text">溯游和逆光飞行我各买了一张数字，林昭的编曲层次多，陈屿的歌词更戳。销量差距主要差在实体签名和预售周期上，歌本身各花入各眼。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">三</div>
+              <span class="comment-name">三亚阿杰粉丝</span>
+              <span class="comment-time">11-01 09:12</span>
+            </div>
+            <p class="comment-text">阿杰拍路透好几年了，首发从来只发原片不加文案，转发那帮人才是真正的“编剧”。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">夏</div>
+              <span class="comment-name">夏日回声淘汰粉</span>
+              <span class="comment-time">10-31 20:55</span>
+            </div>
+            <p class="comment-text">孙晓导师票第2观众票第6被淘汰，李梦然导师票第3观众票第5也淘汰。权重30%和50%淘汰的都是同一类选手，改了个寂寞。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">雾</div>
+              <span class="comment-name">雾港码头工</span>
+              <span class="comment-time">10-30 17:40</span>
+            </div>
+            <p class="comment-text">第6集那个长镜头里背景有个穿帮的矿泉水瓶，弹幕没人提，B站逐帧分析的up主也没提。我是不是看太细了。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-avatar">星</div>
+              <span class="comment-name">星河滚烫</span>
+              <span class="comment-time">10-29 13:26</span>
+            </div>
+            <p class="comment-text">星辰少年成都站定在2027年1月10日，凤凰山体育公园冬天很冷，去的话记得穿厚点。别问怎么知道的，去年在那边冻过。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2>相关资讯</h2>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <h3 class="news-title">《烈焰之下》第18集单集弹幕42万，腾讯视频站内热度值破3.2万</h3>
+            <div class="news-meta">11月7日</div>
+            <p class="news-summary">腾讯视频11月7日数据显示，第18集上线4小时内弹幕量突破42万条，站内热度值3.21万，超过该剧第12集创下的2.98万纪录。第19集预告中孟队台词“你从一开始就在骗我”播放量已破800万。</p>
+          </article>
+          <article class="news-item">
+            <h3 class="news-title">赵一鸣工作室回应三亚路透：录制流程以节目播出为准</h3>
+            <div class="news-meta">11月6日</div>
+            <p class="news-summary">11月6日20:15，赵一鸣工作室转发节目组声明并配文“专注录制，期待播出”。此前抖音“三亚阿杰”首发视频点赞62万，转发版本多出“交换队友”文案，节目组未确认该环节是否存在。下一站丽江录制时间未公布。</p>
+          </article>
+          <article class="news-item">
+            <h3 class="news-title">林昭《溯游》实体专辑首批2万张12分钟售罄，签名海报随机发放</h3>
+            <div class="news-meta">11月5日</div>
+            <p class="news-summary">11月1日开启预售的实体专辑包含随机签名海报，首批2万张在12分钟内售罄。QQ音乐11月5日数据显示，数字专辑售出约58万张，实体预售约22.6万张，总销量80.6万张。第二批实体专辑预售时间未公布。</p>
+          </article>
+          <article class="news-item">
+            <h3 class="news-title">《夏日回声》第8期陈立农弃权投票，微博话题阅读量1.4亿</h3>
+            <div class="news-meta">11月6日</div>
+            <p class="news-summary">第8期淘汰环节，陈立农在导师投票时选择弃权，现场观众投票权重已从30%提至50%。被淘汰选手孙晓导师票排第2、观众票排第6。节目组未回应弃权原因，下期将恢复导师投票权重至60%。</p>
+          </article>
+          <article class="news-item">
+            <h3 class="news-title">星辰少年告别演唱会公布北京、上海、成都三站，刘星宇透露未公开曲目</h3>
+            <div class="news-meta">11月8日</div>
+            <p class="news-summary">11月8日发布的预告中公布三站时间和场馆：12月20日北京凯迪拉克中心、12月27日上海梅赛德斯-奔驰文化中心、2027年1月10日成都凤凰山体育公园。刘星宇在11月4日直播中提到有未公开曲目，但未透露歌名和数量。</p>
+          </article>
+          <article class="news-item">
+            <h3 class="news-title">《雾港》豆瓣评分稳定8.1，第6集长镜头B站播放量200万</h3>
+            <div class="news-meta">11月3日</div>
+            <p class="news-summary">豆瓣11月3日数据显示，《雾港》评分人数突破1.2万，稳定在8.1分。第6集码头追凶长镜头在B站被逐帧分析，播放量200万，弹幕高频词为“稳定器”“调色”“背景穿帮”。导演看片会提到后期制作比预期长三周。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-header">
+          <h2>相关推荐</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="/#hot-series" class="rec-tag">程野卧底身份暴露 <span class="rec-count">9条</span></a>
+          <a href="/#variety" class="rec-tag">三亚沙滩任务路透 <span class="rec-count">7条</span></a>
+          <a href="/#music" class="rec-tag">溯游实体签名海报 <span class="rec-count">5条</span></a>
+          <a href="/#variety" class="rec-tag">夏日回声投票权重调整 <span class="rec-count">6条</span></a>
+          <a href="/#film" class="rec-tag">雾港长镜头逐帧分析 <span class="rec-count">4条</span></a>
+          <a href="/#idol" class="rec-tag">星辰少年巡演城市 <span class="rec-count">5条</span></a>
+          <a href="/#music" class="rec-tag">逆光飞行销量对比 <span class="rec-count">3条</span></a>
+          <a href="/#news" class="rec-tag">孟队审讯室台词 <span class="rec-count">2条</span></a>
+        </div>
+      </section>
+
+      <!-- 热度榜单 -->
+      <section class="section" id="ranking">
+        <div class="section-header">
+          <h2>热度榜单（11月8日更新）</h2>
+        </div>
+        <div class="ranking-list">
+          <div class="rank-item">
+            <span class="rank-num top1">1</span>
+            <span class="rank-name">烈焰之下</span>
+            <span class="rank-score">9.4</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top2">2</span>
+            <span class="rank-name">出发吧朋友</span>
+            <span class="rank-score">9.1</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top3">3</span>
+            <span class="rank-name">林昭《溯游》</span>
+            <span class="rank-score">9.0</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">4</span>
+            <span class="rank-name">星辰少年告别演唱会</span>
+            <span class="rank-score">8.8</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">5</span>
+            <span class="rank-name">雾港</span>
+            <span class="rank-score">8.7</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">6</span>
+            <span class="rank-name">夏日回声</span>
+            <span class="rank-score">8.5</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">7</span>
+            <span class="rank-name">陈屿《逆光飞行》</span>
+            <span class="rank-score">8.2</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">8</span>
+            <span class="rank-name">程野卧底话题</span>
+            <span class="rank-score">8.0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="section" id="submit">
+        <div class="submit-module">
+          <span class="submit-icon">📮</span>
+          <div class="submit-text">
+            <h3>投稿 / 上传路透</h3>
+            <p>拍到片场路透、综艺录制现场或演唱会片段？发送条目名、时间、地点和原始素材，编辑会在核实后整理进更新流。目前接受图片和短视频，不接收剪辑加工过的二创版本。</p>
+          </div>
+          <a href="/#submit" class="btn-primary">提交素材 →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="right-sidebar" aria-label="辅助信息">
+      <div class="sidebar-card">
+        <h3>今日热榜</h3>
+        <ul class="sidebar-list">
+          <li><span class="idx hot">1</span><a href="/#hot-series">烈焰之下18集</a></li>
+          <li><span class="idx hot">2</span><a href="/#variety">三亚路透首发</a></li>
+          <li><span class="idx hot">3</span><a href="/#music">溯游实体售罄</a></li>
+          <li><span class="idx">4</span><a href="/#variety">陈立农弃权投票</a></li>
+          <li><span class="idx">5</span><a href="/#idol">星辰少年三站公布</a></li>
+          <li><span class="idx">6</span><a href="/#film">雾港长镜头200万</a></li>
+          <li><span class="idx">7</span><a href="/#music">逆光飞行41.3万</a></li>
+          <li><span class="idx">8</span><a href="/#hot-series">程野伏笔15-17集</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>条目类型</h3>
+        <div class="sidebar-tag-cloud">
+          <span>悬疑剧集</span>
+          <span>户外综艺</span>
+          <span>音乐综艺</span>
+          <span>数字专辑</span>
+          <span>实体专辑</span>
+          <span>偶像团体</span>
+          <span>巡演</span>
+          <span>片场路透</span>
+          <span>赛制争议</span>
+          <span>长镜头</span>
+          <span>弹幕数据</span>
+          <span>豆瓣评分</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>更新节奏</h3>
+        <ul class="sidebar-list">
+          <li><span class="idx">剧</span>周一至周六 18:00 更新剧集条目</li>
+          <li><span class="idx">综</span>录制日 20:00 更新路透摘要</li>
+          <li><span class="idx">乐</span>每日 12:00 更新销量数据</li>
+          <li><span class="idx">榜</span>每日 22:00 更新热度榜单</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="14" fill="#f39c12"/>
+              <text x="16" y="21" font-size="14" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="bold">17</text>
+            </svg>
+            17吃瓜
+          </div>
+          <p>覆盖2026年10月至11月的剧集、综艺、音乐与偶像条目。内容以条目动态、数据对比、路透摘要和观众评论为主，更新节奏跟随播出与录制安排。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>内容频道</h4>
+            <ul>
+              <li><a href="/#hot-series">热播剧集</a></li>
+              <li><a href="/#variety">综艺现场</a></li>
+              <li><a href="/#music">音乐动态</a></li>
+              <li><a href="/#film">影视速递</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>互动</h4>
+            <ul>
+              <li><a href="/#comments">瓜友评论</a></li>
+              <li><a href="/#submit">投稿上传</a></li>
+              <li><a href="/#ranking">热度榜单</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>参考信息</h4>
+            <ul>
+              <li><a href="/#news">相关资讯</a></li>
+              <li><a href="/#guide">体验指南</a></li>
+              <li><a href="/#faq">常见问答</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>页面内容为示例条目，数据截至2026年11月8日。品牌与剧集名称仅作内容展示。</span>
+        <span>17吃瓜 · 娱乐动态聚合</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // 移动端菜单
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mainNav = document.getElementById('mainNav');
+      const overlay = document.getElementById('navOverlay');
+
+      function closeMenu() {
+        mainNav.classList.remove('open');
+        overlay.classList.remove('show');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+
+      function openMenu() {
+        mainNav.classList.add('open');
+        overlay.classList.add('show');
+        hamburger.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          if (mainNav.classList.contains('open')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+      }
+
+      // 点击导航后收起
+      mainNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 740) {
+            closeMenu();
+          }
+        });
+      });
+
+      // Esc 关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeMenu();
+        }
+      });
+
+      // 回到顶部
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }, { passive: true });
+
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索筛选
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const cardGrid = document.getElementById('cardGrid');
+      const noResult = document.getElementById('noResult');
+      const cards = cardGrid.querySelectorAll('.card');
+
+      function filterCards() {
+        const q = searchInput.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach(function(card) {
+          const text = card.textContent.toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        if (visible === 0) {
+          noResult.classList.add('show');
+        } else {
+          noResult.classList.remove('show');
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterCards);
+      }
+      if (searchBtn) {
+        searchBtn.addEventListener('click', filterCards);
+      }
+
+      // 频道导航高亮
+      const sections = document.querySelectorAll('.section[id]');
+      const channelLinks = document.querySelectorAll('.channel-list a');
+
+      function highlightChannel() {
+        let currentId = '';
+        sections.forEach(function(sec) {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 200) {
+            currentId = sec.id;
+          }
+        });
+        channelLinks.forEach(function(link) {
+          const href = link.getAttribute('href');
+          if (href === '/#' + currentId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightChannel, { passive: true });
+
+    })();
+  </script>
+
+  <!-- FAQ 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《烈焰之下》程野的身份是从哪一集开始铺垫的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第15集到第17集，程野与孟队有三次单独对话，每次不超过90秒。第15集孟队问“你老家在哪”，程野回答时停顿了2秒；第16集孟队递给程野一份档案，镜头给了档案袋上的编号特写；第17集程野在走廊遇到孟队时下意识摸了一下后腰。第18集身份暴露时，这三处细节被弹幕逐条翻出来。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《雾港》为什么一周只更新三集？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "爱奇艺的排播策略是每周三、五、六各更新一集，共12集。导演在10月28日的看片会上提到，后期制作周期比预期长了三周，码头场景的调色和长镜头剪辑耗时较多。第6集那个长镜头追凶片段，单是稳定器调试就花了两天。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《夏日回声》现场观众投票的500人是怎么选的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "节目组没有公开具体抽取方式。已知信息：每期录制前三天在官方小程序开放报名，报名者需填写年龄、职业和对往期节目的评价。第8期录制现场有观众在社交平台提到“报名时选了‘经常看音综’”，但节目组未回应该选项是否影响入选概率。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "林昭《溯游》实体专辑和数字专辑有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "数字专辑在QQ音乐购买后可在线收听全部10首歌，实体专辑包含CD、歌词本和一张随机签名海报（首批2万张带签名）。实体专辑预售在11月1日开启，12分钟内首批售罄；数字专辑从10月20日上线，截至11月5日售出约58万张，占总量80.6万的72%。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "星辰少年告别演唱会已经公布了哪些城市？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11月8日发布的预告中公布了北京、上海、成都三站，五站巡演还剩两站未公布。北京站时间定在12月20日，场馆是凯迪拉克中心；上海站12月27日，梅赛德斯-奔驰文化中心；成都站2027年1月10日，凤凰山体育公园。刘星宇在11月4日直播中提到“有未公开曲目”，但没透露歌名。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《出发吧朋友》三亚站路透里赵一鸣和周雨桐在做什么任务？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11月6日14:23抖音账号“三亚阿杰”首发的视频显示，两人在沙滩上分头跑向不同颜色的旗子，周雨桐先到，赵一鸣落后约3秒。转发文案里写的“交换队友”环节在视频中没有出现，节目组6日20:15的回应只说了“录制流程以播出为准”，没有确认这个环节是否存在。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- WebSite 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "17吃瓜",
+    "description": "聚合热剧、综艺、音乐与影视动态的内容页面，提供具体条目、数据对比与观众讨论。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+</body>
+  </html>
